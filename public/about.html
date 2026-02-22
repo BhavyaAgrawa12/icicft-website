@@ -131,7 +131,7 @@ body {
 
 <!-- ================= FOOTER ================= -->
 <div id="footer-placeholder"></div>
-
+<script src="/assets/js/main.js"></script>
 <script>
 fetch("components/footer.html")
   .then(response => response.text())
@@ -147,41 +147,7 @@ fetch("components/footer.html")
   });
 
 document.addEventListener("DOMContentLoaded", function () {
-// Header
-  fetch("/components/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
 
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-      }
-
-      const currentPage = window.location.pathname.split("/").pop();
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      navLinks.forEach(link => {
-        const linkPage = link.getAttribute("href").split("/").pop();
-        if (linkPage === currentPage) {
-          link.classList.add("text-primary", "font-semibold");
-        }
-      });
-    });
-
-  /* Mobile Menu */
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", function () {
-      mobileMenu.classList.toggle("hidden");
-    });
-  }
 
   /* Slider */
   const sliders = document.querySelectorAll(".slider");

@@ -36,15 +36,15 @@
     About
     <span id="aboutArrow"
           class="transition-transform duration-300 text-xs">
-        ▼
+      ▼
     </span>
   </button>
 
  <div id="aboutMenu"
-
-       class="absolute left-0 top-full mt-3 w-64 bg-white 
-              rounded-2xl shadow-2xl border border-gray-100 
-              hidden z-50 ">
+  class="absolute left-0 top-full mt-2 w-60 
+         bg-white/80 backdrop-blur-md
+         border border-gray-200
+         hidden z-50">
 
   <ul class="py-2 text-sm text-gray-800 list-disc list-inside space-y-1">
 <div></div>
@@ -68,7 +68,7 @@
 
 </li>
           <!-- Call For Papers Dropdown -->
-            <!-- <li class="relative">
+            <li class="relative group">
                 
 <button id="cfpBtn"
           class="hover:text-primary transition flex items-center gap-1">
@@ -78,68 +78,30 @@
       ▼
     </span>
 </button>
-<div id="cfpMenu"
-     class="absolute left-0 top-full mt-3
-            bg-white rounded-2xl
-            shadow-2xl border border-gray-100
-            hidden z-50
-            min-w-[220px]">
-
-  <div class="py-2 text-sm text-gray-800 text-left">
-
-    <a href="/call-for-papers.html"
-       class="block px-5 py-2 font-medium hover:text-primary transition-colors">
-      Conference Track
-    </a>
-
-    <a href="/special-sessions.html"
-       class="block px-5 py-2 font-medium hover:text-primary transition-colors">
-      Special Sessions
-    </a>
-
-  </div>
-
-</div>
-          </li> -->
-<li class="relative">
-
-  <button id="cfpBtn"
-          class="hover:text-primary transition flex items-center gap-1 font-medium">
-    Call for Papers
-    <span id="cfpArrow"
-          class="transition-transform duration-300 text-xs">
-      ▼
-    </span>
-  </button>
-
-  <div id="cfpMenu"
+                <div id="cfpMenu"
        class="absolute left-0 top-full mt-3 w-64 bg-white 
               rounded-2xl shadow-2xl border border-gray-100 
-              hidden z-50">
+              hidden z-50 overflow-hidden">
 
-    <ul class="py-2 text-sm text-gray-800 space-y-1">
+ <ul class="py-2 text-sm text-gray-800 list-disc list-inside space-y-1">
+<div></div>
+    <li>
+      <a href="/call-for-papers.html"
+         class="block px-4 py-2 hover:text-primary">
+        Conference Track
+      </a>
+    </li>
 
-      <li>
-        <a href="/call-for-papers.html"
-           class="block px-4 py-2 hover:text-primary">
-          Conference Track
-        </a>
-      </li>
+    <li>
+      <a href="/special-sessions.html"
+         class="block px-4 py-2 hover:text-primary">
+        Special Sessions
+      </a>
+    </li>
 
-      <li>
-        <a href="/special-sessions.html"
-           class="block px-4 py-2 hover:text-primary">
-          Special Sessions
-        </a>
-      </li>
-
-    </ul>
-
+  </ul>
   </div>
-
-</li>
-
-          
+          </li>
 
           <li>
             <a href="/submission.html" class="hover:text-primary transition nav-link">

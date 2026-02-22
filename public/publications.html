@@ -175,19 +175,8 @@ fetch("components/footer.html")
 document.addEventListener("DOMContentLoaded", function () {
 
   // Load Header
-  fetch("/components/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
-
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-      }
+  
+      
 
       const currentPage = window.location.pathname.split("/").pop();
       const navLinks = document.querySelectorAll(".nav-link");
@@ -198,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
           link.classList.add("text-primary", "font-semibold");
         }
       });
-    });
+    
 
   /* MOBILE MENU */
   const menuBtn = document.getElementById("menuBtn");
@@ -235,6 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

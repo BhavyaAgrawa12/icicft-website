@@ -48,17 +48,19 @@ body { animation: pageFade 0.8s ease-in-out; }
 <div id="header-placeholder"></div>
 
 <!-- ================= HERO ================= -->
-<section class="py-20 bg-gray-50 fade-section">
+<section class="py-28 bg-gray-50 fade-section">
 <div class="max-w-6xl mx-auto px-6 text-center">
 
 <h1 class="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+
 2<sup>nd</sup> International Conference on Sustainable Computing
-and Intelligent Systems (ICSCIS 2026)
+and Intelligent Systems <br> (ICSCIS 2026)
 </h1>
 
 <p class="text-xl md:text-2xl text-primary font-semibold mb-10">
 25–26 September, 2026
 </p>
+
 <!-- Campus Image -->
 <div class="relative rounded-xl overflow-hidden shadow-lg mb-10">
 <div class="slider relative w-full h-72 md:h-96">
@@ -103,7 +105,7 @@ and Intelligent Systems (ICSCIS 2026)
 <div class="inline-block bg-blue-50 border border-blue-200 px-6 py-4 rounded-xl max-w-3xl">
 <p class="text-primary font-medium">
 All accepted papers will be recommended for publication in
-AIP Conference Proceedings (Application sent)
+AIP Conference Proceedings (Application sent for publication)
 </p>
 </div>
 
@@ -543,38 +545,14 @@ fetch("components/footer.html")
     }, 100);
   });
 </script>
+<script src="/assets/js/main.js"></script>
 
 <!-- ================= SCRIPTS ================= -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Header
-  fetch("/components/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
+  
 
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-      }
-
-      const currentPage = window.location.pathname.split("/").pop();
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      navLinks.forEach(link => {
-        const linkPage = link.getAttribute("href").split("/").pop();
-        if (linkPage === currentPage) {
-          link.classList.add("text-primary", "font-semibold");
-        }
-      });
-    });
-
- 
 
   // Slider (Fix - Per Slider)
 const sliders = document.querySelectorAll(".slider");

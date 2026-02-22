@@ -206,30 +206,7 @@ fetch("components/footer.html")
 document.addEventListener("DOMContentLoaded", function () {
 
   // Header
-  fetch("/components/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
-
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-      }
-
-      const currentPage = window.location.pathname.split("/").pop();
-      const navLinks = document.querySelectorAll(".nav-link");
-
-      navLinks.forEach(link => {
-        const linkPage = link.getAttribute("href").split("/").pop();
-        if (linkPage === currentPage) {
-          link.classList.add("text-primary", "font-semibold");
-        }
-      });
-    });
+ 
 
   
  
@@ -259,6 +236,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

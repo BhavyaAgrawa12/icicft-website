@@ -162,19 +162,8 @@ fetch("components/footer.html")
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // Header
-  fetch("/components/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
-
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-      }
+ 
+      
 
       const currentPage = window.location.pathname.split("/").pop();
       const navLinks = document.querySelectorAll(".nav-link");
@@ -222,9 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     });
-
-});
 </script>
-
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -3,8 +3,6 @@
     background: linear-gradient(135deg, #0d1b5e, #142a86);
     color: #ffffff;
     font-family: Arial, sans-serif;
-
-    /* Fade Animation */
     opacity: 0;
     transform: translateY(40px);
     transition:
@@ -15,11 +13,6 @@
   .footer.show-footer {
     opacity: 1;
     transform: translateY(0);
-  }
-  .footer {
-    background: linear-gradient(135deg, #0d1b5e, #142a86);
-    color: #ffffff;
-    font-family: Arial, sans-serif;
   }
 
   .footer-container {
@@ -93,6 +86,47 @@
       gap: 10px;
     }
   }
+
+  /* ================= POPUP CSS ================= */
+
+ #conferencePopup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  z-index: 9999;
+  overflow-y: auto;       /* scroll on mobile */
+  padding: 20px;
+}
+
+#conferencePopup.show {
+  display: flex;
+  align-items: flex-start;   /* important */
+  justify-content: center;
+}
+
+/* Modal box */
+#conferencePopup .popup-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 800px;         /* smaller on desktop */
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+/* Desktop center perfectly */
+@media (min-width: 768px) {
+  #conferencePopup.show {
+    align-items: center;   /* vertical center only on desktop */
+  }
+
+  #conferencePopup .popup-box {
+    margin: 0;
+  }
+}
 </style>
 
 <footer class="footer">
@@ -147,3 +181,147 @@
     </div>
   </div>
 </footer>
+
+<!-- ================= POPUP HTML ================= -->
+
+<div id="conferencePopup">
+  <div
+    class="bg-white w-[950px] max-w-[95%] rounded-2xl overflow-hidden shadow-2xl"
+  >
+    <!-- Header -->
+    <div
+      class="bg-blue-800 text-white px-6 py-5 flex justify-between items-center"
+    >
+      <div>
+        <h2 class="text-xl font-semibold">Submit Your Paper</h2>
+        <p class="text-sm text-blue-200">
+          Join ICSCSIS 2026 – Share Your Research
+        </p>
+      </div>
+
+      <button id="closePopup" class="text-2xl font-bold hover:text-gray-300">
+        ×
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="p-4 md:p-8 bg-gray-50">
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Important Dates -->
+        <div class="bg-white rounded-lg p-4 md:p-6 shadow-sm border">
+          <h3 class="font-semibold text-lg mb-4">Important Dates</h3>
+
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li class="flex justify-between">
+              <span>Full Paper Submission:</span>
+              <span class="font-medium">10 July, 2026</span>
+            </li>
+
+            <li class="flex justify-between">
+              <span>Notification of Acceptance:</span>
+              <span class="font-medium">31 August, 2026</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Early Bird Registration:</span>
+              <span class="font-medium">05 September, 2026</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Late Registration:</span>
+              <span class="font-medium">15 September, 2026</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Camera Ready:</span>
+              <span class="font-medium">20 September, 2026</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Conference Dates:</span>
+              <span class="font-medium">25–26 September, 2026</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Submission Process -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+          <h3 class="font-semibold text-lg mb-4">Submission Process</h3>
+
+          <ol class="text-sm text-gray-700 space-y-3">
+            <li class="flex items-start gap-3">
+              <span
+                class="bg-blue-700 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                >1</span
+              >
+              Prepare research paper (6–8 pages)
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span
+                class="bg-blue-700 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                >2</span
+              >
+              Follow AIPCP conference format
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span
+                class="bg-blue-700 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                >3</span
+              >
+              Submit via online portal
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span
+                class="bg-blue-700 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                >4</span
+              >
+              Await review notification
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Note -->
+      <div
+        class="mt-6 bg-blue-50 border border-blue-200 text-blue-800 text-sm p-4 rounded-lg"
+      >
+        <strong>Note:</strong> All papers will be peer reviewed. Accepted papers
+        will be published in AIP Proceedings – Scopus Indexed (Approval
+        pending).
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col md:flex-row gap-4 mt-8">
+        <a
+          href="submission.html"
+          class="flex-1 bg-blue-800 text-white text-center py-2.5 rounded-lg font-semibold text-sm md:text-base hover:bg-blue-900 transition"
+        >
+          Submit Paper Now →
+        </a>
+
+         <a
+          href="call-for-papers.html"
+          class="flex-1 bg-blue-800 text-white text-center py-2.5 rounded-lg font-semibold text-sm md:text-base hover:bg-blue-900 transition"
+        >
+          View Guidelines →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      const popup = document.getElementById("conferencePopup");
+      if (popup) {
+        popup.classList.add("show");
+      }
+    }, 600);
+  });
+
+  document.addEventListener("click", function (e) {
+    if (e.target.id === "closePopup" || e.target.id === "closePopupBtn") {
+      document.getElementById("conferencePopup").classList.remove("show");
+    }
+  });
+</script>

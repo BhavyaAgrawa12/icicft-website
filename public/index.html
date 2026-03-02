@@ -13,7 +13,7 @@
     <link href="./assets/css/output.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
+     <style>
       body {
         animation: pageFade 0.8s ease-in-out;
       }
@@ -57,8 +57,64 @@
   </head>
 
   <body class="bg-white text-gray-800">
+    <!-- ================= NOTICE SLIDER ================= -->
+
     <!-- HEADER -->
     <div id="header-placeholder"></div>
+    <div
+      id="noticeBar"
+      class="w-full bg-gradient-to-r bg-blue-800 text-white py-3 relative overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+        <!-- Left Section -->
+        <div class="flex items-center gap-4 overflow-hidden">
+          <span class="bg-white/20 px-4 py-1 rounded-full text-sm font-medium">
+             Notice
+          </span>
+
+          <!-- Notice Text Wrapper -->
+          <div class="relative w-[700px] max-w-[65vw] overflow-hidden">
+            <div
+              id="noticeSlider"
+              class="flex transition-transform duration-700 ease-in-out"
+            >
+              <div class="min-w-full flex items-center gap-2 text-sm">
+                <span>📢</span>
+                <span>Paper Submission Deadline: 15 September, 2026</span>
+              </div>
+
+              <div class="min-w-full flex items-center gap-2 text-sm">
+                <span>🌟</span>
+                <span>ICSCIS 2026 September 25–26, 2026</span>
+              </div>
+
+              <div class="min-w-full flex items-center gap-2 text-sm">
+                <span>🎓</span>
+                <span>Early Bird Registration: 05 September, 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="flex items-center gap-4">
+          <!-- Dots -->
+          <div id="noticeDots" class="flex gap-2">
+            <span class="w-2 h-2 bg-white rounded-full opacity-100"></span>
+            <span class="w-2 h-2 bg-white rounded-full opacity-40"></span>
+            <span class="w-2 h-2 bg-white rounded-full opacity-40"></span>
+          </div>
+
+          <!-- Close -->
+          <button
+            id="closeNotice"
+            class="text-white text-lg hover:text-gray-300"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- ================= HERO ================= -->
     <section class="py-28 bg-gray-50 fade-section">
@@ -74,7 +130,7 @@
         <p class="text-xl md:text-xl text-primary font-semibold mb-10">
           25–26 September, 2026
           <br />
-          (Organized by Poornima University FCE Department, Jaipur, India)
+          (Organized by CSE, FCE Department, Poornima University, Jaipur)
         </p>
 
         <!-- Campus Image -->
@@ -141,368 +197,339 @@
       </div>
     </section>
 
-    <!-- IMPORTANT DATES -->
-    <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">
-          Important Dates
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 smooth-card"
-          >
-            <div
-              class="bg-blue-600 text-white p-4 rounded-full inline-block mb-6"
-            >
-              📄
-            </div>
-            <h3 class="font-semibold mb-2">Full Paper Submission</h3>
-            <p class="text-gray-600 text-sm">July 10, 2026</p>
-          </div>
-
-          <div
-            class="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 smooth-card"
-          >
-            <div
-              class="bg-green-600 text-white p-4 rounded-full inline-block mb-6"
-            >
-              📅
-            </div>
-            <h3 class="font-semibold mb-2">Notification of Acceptance</h3>
-            <p class="text-gray-600 text-sm">August 31, 2026</p>
-          </div>
-
-          <!-- <div
-            class="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 smooth-card"
-          >
-            <div
-              class="bg-purple-600 text-white p-4 rounded-full inline-block mb-6"
-            >
-              📝
-            </div>
-            <h3 class="font-semibold mb-2">Revised Paper Submission</h3>
-            <p class="text-gray-600 text-sm">August 31, 2026</p>
-          </div> -->
-
-          <div
-            class="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 smooth-card"
-          >
-            <div
-              class="bg-red-600 text-white p-4 rounded-full inline-block mb-6"
-            >
-              👥
-            </div>
-            <h3 class="font-semibold mb-2">Early Bird Registration</h3>
-            <p class="text-gray-600 text-sm">September 5, 2026</p>
-          </div>
-
-          <div
-            class="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 smooth-card"
-          >
-            <div
-              class="bg-pink-600 text-white p-4 rounded-full inline-block mb-6"
-            >
-              📅
-            </div>
-            <h3 class="font-semibold mb-2">Late Registration</h3>
-            <p class="text-gray-600 text-sm">September 15, 2026</p>
-          </div>
-
-          <div
-            class="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 smooth-card"
-          >
-            <div
-              class="bg-amber-600 text-white p-4 rounded-full inline-block mb-6"
-            >
-              🏆
-            </div>
-            <h3 class="font-semibold mb-2">Conference Dates</h3>
-            <p class="text-gray-600 text-sm">September 25–26, 2026</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT RAJASTHAN -->
-    <section class="py-24 bg-gray-50">
+    <!-- About Section -->
+    <section class="py-24 bg-gray-200 fade-section">
       <div
-        class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center"
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
       >
-        <div class="relative rounded-xl overflow-hidden shadow-lg">
-          <div class="slider relative w-full h-72">
-            <div
-              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
-            >
-              <img
-                src="assets/images/rajasthan-heritage-fort.jpg"
-                class="w-full h-full object-cover"
-              />
-            </div>
+        <!-- Text -->
+        <div>
+          <h3 class="text-3xl font-bold mb-6">What is ICSCSIS–2026?</h3>
 
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="assets/images/jaisalmer.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            The International Conference on Intelligent Computing and Control
+            Systems (ICICCS 2026) serves as a dynamic platform for researchers,
+            academicians, and industry professionals to explore advancements in
+            intelligent computing, IoT, and embedded systems. The conference
+            emphasizes sustainable and energy-efficient technologies, focusing
+            on low-power devices, advanced materials, and environmentally
+            responsible circuit design
+          </p>
 
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="assets/images/mehrangarh-fort-jodhpur-india.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+          <p class="text-gray-600 leading-relaxed">
+            It also addresses innovations in renewable energy integration and
+            smart grid systems, promoting reliable, efficient, and sustainable
+            solutions for the future of semiconductor and electronics
+            industries.
+          </p>
+          <br />
+          <a
+            href="about.html"
+            class="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+            >Read More</a
+          >
         </div>
 
+        <!-- Image -->
         <div>
-          <h2 class="text-3xl font-bold mb-6">About Rajasthan</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Rajasthan is the largest state of India, encompassing the vast
-            stretches of the Thar Desert, grand palaces, and magnificent forts
-            that reflect its glorious past. Known for its vibrant culture,
-            colorful festivals, folk music, and deeply rooted traditions, the
-            state showcases a rich royal heritage in every corner.
-          </p>
-          <p class="text-gray-600 leading-relaxed">
-            Its majestic architecture and lively cultural spirit make Rajasthan
-            one of the most fascinating and culturally diverse regions of the
-            country, attracting countless tourists from across the globe.
-          </p>
+          <img
+            src="assets/images/conference.webp"
+            class="rounded-2xl shadow-lg w-full object-cover"
+          />
         </div>
       </div>
     </section>
 
-    <!-- ABOUT JAIPUR -->
-    <section class="py-24 bg-white">
-      <div
-        class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center"
-      >
-        <div>
-          <h2 class="text-3xl font-bold mb-6">About Jaipur</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Jaipur, famously known as the Pink City, beautifully blends royal
-            heritage with modern innovation. Home to iconic landmarks like Hawa
-            Mahal, Amber Fort, and City Palace, the city reflects the grandeur
-            of Rajasthan’s regal past. Alongside its historic charm, Jaipur has
-            emerged as a vibrant hub for education, technology, and growing
-            industries
-          </p>
-          <p class="text-gray-600 leading-relaxed">
-            Its rich culture, architectural beauty, and progressive spirit make
-            it one of India’s most dynamic and captivating cities.
-          </p>
-        </div>
-
-        <div class="relative rounded-xl overflow-hidden shadow-lg">
-          <div class="slider relative w-full h-72">
-            <div
-              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
-            >
-              <img
-                src="assets/images/jaipur-city-pink-architecture.jpg"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="assets/images/hawa-mahal-at-evening-jaipur-rajasthan-india-photo.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="assets/images/jal-mahal-at-blue-hour.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ABOUT POORNIMA UNIVERSITY -->
-    <section class="py-24 bg-gray-100">
+    <!-- Topics Section -->
+    <section class="py-24 bg-white text-center fade-section">
       <div class="max-w-6xl mx-auto px-6">
-        <!-- Section Title -->
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-        >
-          About Poornima University
+        <h2 class="text-4xl font-bold mb-6 text-gray-900">
+          Topics @ ICSCSIS–2026
         </h2>
 
-        <!-- Two Column Content -->
-        <div
-          class="grid md:grid-cols-2 gap-12 text-gray-600 leading-relaxed text-justify"
-        >
-          <!-- Left Column -->
-          <div class="space-y-6">
-            <p>
-              Poornima University (PU) is a state private University in Jaipur,
-              India established by an act of the Rajasthan legislature. PU was
-              established in 2012 with a vision to create a knowledge-based
-              society with scientific temper, team spirit and dignity of labour
-              to face global competition and challenges.
-            </p>
+        <p class="text-gray-600 max-w-4xl mx-auto mb-16 text-lg leading-relaxed">
+  ICSCIS-2026 covers interdisciplinary research areas that address emerging
+  challenges in sustainable computing, intelligent systems, and digital
+  transformation. The conference encourages innovative research contributions,
+  practical implementations, and industry-driven solutions across core and
+  emerging technology domains.
+</p>
 
-            <p>
-              PU is recognized by University Grants Commission (UGC) under
-              Section 2(f) and 12(B) with the right to confer degrees as per
-              Section 22 (1) of the UGC Act, 1956. Its architecture program is
-              approved by the Council of Architecture (CoA) and the hotel
-              management program is approved by NCHMCT.
-            </p>
-          </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Box 1 -->
+          <div class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md hover:shadow-xl transition">
+  <h4 class="text-2xl font-semibold text-blue-900 mb-3">
+    Internet of Things
+  </h4>
+  <p class="text-gray-700 leading-relaxed">
+    Research on smart devices, sensor networks, real-time communication
+    systems, and scalable IoT architectures enabling sustainable and
+    intelligent infrastructure development.
+  </p>
+</div>
 
-          <!-- Right Column -->
-          <div class="space-y-6">
-            <p>
-              Currently, PU has more than 8000+ students from all over the
-              country enrolled in nine faculties and fourteen departments of
-              UG/PG and PhD Programs in various areas such as Management,
-              Engineering, Computer Application Sciences, Architecture, Design,
-              Public Health and Hotel Management, etc.
-            </p>
+          <!-- Box 2 -->
+          <div class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md hover:shadow-xl transition">
+  <h4 class="text-2xl font-semibold text-blue-900 mb-3">
+    Big Data Analytics
+  </h4>
+  <p class="text-gray-700 leading-relaxed">
+    Advanced research in large-scale data processing, predictive modeling,
+    machine learning algorithms, and intelligent decision-support systems
+    for solving complex real-world and industrial challenges.
+  </p>
+</div>
 
-            <p>
-              The university is committed to fostering research and innovation,
-              and this conference is part of its mission to promote cutting-edge
-              research in sustainable computing and intelligent systems.
-            </p>
-          </div>
+          <!-- Box 3 -->
+          <div class="bg-blue-50 border border-blue-200 rounded-3xl p-10 shadow-md hover:shadow-xl transition">
+  <h4 class="text-2xl font-semibold text-blue-900 mb-3">
+    Automation
+  </h4>
+  <p class="text-gray-700 leading-relaxed">
+    Innovations in intelligent control systems, robotics, industrial
+    automation, and smart manufacturing technologies aimed at improving
+    efficiency, precision, and sustainable operational performance.
+  </p>
+</div>
         </div>
+        <br />
+        <a
+          href="call-for-papers.html"
+          class="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+          >More Tracks
+        </a>
+      </div>
+    </section>
+    <!-- Partners Section -->
+    <section class="py-24 bg-gray-200 text-center fade-section">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-6">Our Partners</h2>
+
+        <p class="text-gray-600 max-w-4xl mx-auto mb-16 text-lg leading-relaxed">
+  ICSCIS-2026 is supported by distinguished academic institutions,
+  research organizations, and professional bodies committed to advancing
+  innovation in sustainable computing and intelligent technologies.
+  These collaborations strengthen the conference’s global outreach,
+  research credibility, and academic impact.
+</p>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition">
+  <img src="assets/images/nitttr_logo.jpeg" class="mx-auto h-20 mb-4" />
+  <h4 class="text-lg font-semibold text-gray-800">NITTTR</h4>
+  <p class="text-sm text-gray-600 mt-2">
+    National Institute supporting technical education, research
+    excellence, and faculty development.
+  </p>
+</div>
+
+          <div class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition">
+  <img src="assets/images/rcat_logo.jpeg" class="mx-auto h-20 mb-4" />
+  <h4 class="text-lg font-semibold text-gray-800">RCAT</h4>
+  <p class="text-sm text-gray-600 mt-2">
+    Rajasthan Council for Advanced Training, fostering innovation,
+    skill development, and industry-oriented research initiatives.
+  </p>
+</div>
+
+          <div class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition">
+  <img src="assets/images/ashrae.png" class="mx-auto h-20 mb-4" />
+  <h4 class="text-lg font-semibold text-gray-800">ASHRAE</h4>
+  <p class="text-sm text-gray-600 mt-2">
+    Global professional body advancing sustainable engineering
+    practices in heating, ventilation, air conditioning,
+    and energy-efficient systems.
+  </p>
+</div>
+        </div>
+        <br />
+        <a
+          href="partners.html"
+          class="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+          >More Parterns</a
+        >
       </div>
     </section>
     <!-- Committee Section  -->
     <section class="py-24 bg-white text-center fade-section">
       <div class="max-w-6xl mx-auto px-6">
-        <!-- Section Title -->
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-        >
-          About the FCE Department
-        </h2>
+        <h2 class="text-4xl font-bold mb-16 text-gray-900">Committee</h2>
+        <p class="text-gray-600 max-w-4xl mx-auto mb-16 text-lg leading-relaxed">
+  The success of ICSCIS-2026 is guided by an accomplished panel of academic
+  leaders, researchers, and industry experts who bring extensive experience in
+  sustainable computing, intelligent systems, and emerging technologies. Their
+  strategic vision, research excellence, and commitment to innovation ensure
+  the conference maintains the highest standards of technical quality,
+  global collaboration, and academic integrity.
+</p>
 
-        <!-- Vision & Mission Cards -->
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-          <!-- Vision -->
-          <div class="bg-blue-100 rounded-2xl shadow-md p-8">
-            <h3 class="text-xl font-semibold text-primary mb-4">Vision</h3>
-            <p class="text-gray-600 leading-relaxed text-justify">
-              To create a leading center of excellence in computing education,
-              research, and innovation that empowers learners with advanced
-              technological skills, nurtures problem-solving abilities, and
-              contributes to the development of a smart, secure, and sustainable
-              digital society.
-            </p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Member 1 -->
+          <div
+            class="bg-blue-50 border border-blue-200 rounded-3xl p-8 shadow-md hover:shadow-xl transition"
+          >
+            <h4 class="text-xl font-semibold text-blue-900 mb-2">
+              Dr. Suresh Chandra Padhy
+            </h4>
+            <p> President , PU</p>
+
+            <p class="text-gray-700">Honorary Patron</p>
           </div>
 
-          <!-- Mission -->
-          <div class="bg-blue-100 rounded-2xl shadow-md p-8">
-            <h3 class="text-xl font-semibold text-primary mb-4">Mission</h3>
+          <!-- Member 2 -->
+          <div
+            class="bg-blue-50 border border-blue-200 rounded-3xl p-8 shadow-md hover:shadow-xl transition"
+          >
+            <h4 class="text-xl font-semibold text-blue-900 mb-2">
+              Prof. (Dr.) Ankush Jain
+            </h4>
+            <p> Dean Academics, PU</p>
+            <p class="text-gray-700">Advisory</p>
+          </div>
 
-            <ul class="space-y-4 text-gray-600 leading-relaxed">
-              <li class="flex gap-3">
-                <span class="font-semibold text-primary">1.</span>
-                <span class="text-justify">
-                  To provide an outcome-based, industry-relevant curriculum that
-                  enhances technical competence and lifelong learning.
-                </span>
-              </li>
-
-              <li class="flex gap-3">
-                <span class="font-semibold text-primary">2.</span>
-                <span class="text-justify">
-                  To promote innovation, research culture, and technological
-                  entrepreneurship among students and faculty.
-                </span>
-              </li>
-
-              <li class="flex gap-3">
-                <span class="font-semibold text-primary">3.</span>
-                <span class="text-justify">
-                  To strengthen collaborations with industry, research
-                  organizations, and global institutions for knowledge sharing
-                  and skill enhancement.
-                </span>
-              </li>
-
-              <li class="flex gap-3">
-                <span class="font-semibold text-primary">4.</span>
-                <span class="text-justify">
-                  To develop ethical, skilled, and socially responsible
-                  computing professionals capable of contributing to national
-                  and global technological growth.
-                </span>
-              </li>
-            </ul>
+          <!-- Member 3 -->
+          <div
+            class="bg-blue-50 border border-blue-200 rounded-3xl p-8 shadow-md hover:shadow-xl transition"
+          >
+            <h4 class="text-xl font-semibold text-blue-900 mb-2">
+              Dr. Ajay Khunteta
+            </h4>
+            <p>Dean FCE, PU</p>
+            <p class="text-gray-700">Conference Chair</p>
           </div>
         </div>
-
-        <!-- Department Description Block -->
-        <div
-          class="bg-gray-100 rounded-2xl shadow-md p-8 text-gray-600 leading-relaxed text-justify"
+        <br />
+        <a
+          href="committee.html"
+          class="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+          >View Full Committee</a
         >
-          <p class="mb-6">
-            The Faculty of Computer Science & Engineering at Poornima University
-            is a dynamic hub of technological learning, innovation, and research
-            excellence. It is committed to shaping future-ready professionals
-            equipped with the skills and mindset required to excel in an
-            increasingly digital world.
-          </p>
-
-          <p class="mb-6">
-            With a strong emphasis on emerging technologies such as Artificial
-            Intelligence, Machine Learning, Cyber Security, Cloud Computing,
-            IoT, Blockchain, Data Analytics, DevOps, and Full-Stack Development,
-            the Faculty of CSE integrates scientific knowledge with real-world
-            application.
-          </p>
-
-          <p>
-            By fostering interdisciplinary collaboration, research engagement,
-            and ethical computing practices, the Faculty of CSE plays a pivotal
-            role in driving innovation within the university. It aspires to
-            cultivate skilled engineers who can address modern challenges, adapt
-            to evolving technologies, and lead with integrity in global digital
-            environments.
-          </p>
-        </div>
       </div>
     </section>
+    <!-- Contact Section -->
+    <section class="py-24 bg-gray-200 fade-section">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Left Content -->
+    <div>
+      <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
+
+      <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+        For inquiries regarding paper submissions, registrations, partnerships,
+        or sponsorship opportunities, please contact the organizing committee.
+        We are committed to providing timely assistance and detailed information.
+      </p>
+
+      <p class="mb-3"><strong>Email:</strong></p>
+      <p class="mb-3"><strong>Phone:</strong> +91-9887587811</p>
+      <p class="mb-6">
+        <strong>Address:</strong> Poornima University, Jaipur, Rajasthan, India
+      </p>
+
+      <!-- Button properly aligned -->
+      <a
+        href="contact.html"
+        class="inline-flex items-center gap-2 bg-blue-800 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition"
+      >
+        📞 Contact Us
+      </a>
+    </div>
+
+    <!-- Right Map -->
+    <div>
+      <iframe
+        src="https://maps.google.com/maps?q=Poornima%20University%20Jaipur%20Rajasthan%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        class="w-full h-80 rounded-2xl shadow-lg"
+        allowfullscreen
+      >
+      </iframe>
+    </div>
+
+  </div>
+</section>
 
     <!-- FOOTER -->
     <div id="footer-placeholder"></div>
 
-    <script>
-      fetch("components/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          const placeholder = document.getElementById("footer-placeholder");
-          placeholder.innerHTML = data;
-
-          // Small delay so CSS applies first
+     <script> 
+      // NOW popup exists — trigger it
           setTimeout(() => {
-            const footer = placeholder.querySelector(".footer");
-            footer.classList.add("show-footer");
-          }, 100);
-        });
-    </script>
-    <script src="/assets/js/main.js"></script>
+            const popup = document.getElementById("conferencePopup");
+            if (popup) popup.classList.add("show");
+          }, 600);
 
-    <!-- ================= SCRIPTS ================= -->
-    <script>
+          // Close handlers
+          document.addEventListener("click", function (e) {
+            if (
+              e.target.id === "closePopup" ||
+              e.target.id === "closePopupBtn"
+            ) {
+              document
+                .getElementById("conferencePopup")
+                ?.classList.remove("show");
+            }
+          });
+
+     
+    
       document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.getElementById("noticeSlider");
+        const dots = document.querySelectorAll("#noticeDots span");
+        const closeBtn = document.getElementById("closeNotice");
+        const noticeBar = document.getElementById("noticeBar");
+
+        if (!slider) return; // safety
+
+        let index = 0;
+        const total = slider.children.length;
+
+        function updateSlider() {
+          slider.style.transform = `translateX(-${index * 100}%)`;
+
+          dots.forEach((dot) => {
+            dot.classList.remove("opacity-100");
+            dot.classList.add("opacity-40");
+          });
+
+          if (dots[index]) {
+            dots[index].classList.remove("opacity-40");
+            dots[index].classList.add("opacity-100");
+          }
+        }
+
+        setInterval(() => {
+          index = (index + 1) % total;
+          updateSlider();
+        }, 4000);
+
+        if (closeBtn) {
+          closeBtn.addEventListener("click", () => {
+            noticeBar.style.display = "none";
+          });
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Slider (Fix - Per Slider)
+        const sliders = document.querySelectorAll(".slider");
+
+        sliders.forEach((slider) => {
+          const slides = slider.querySelectorAll(".slide");
+          let current = 0;
+
+          if (slides.length > 0) {
+            setInterval(() => {
+              slides[current].classList.remove("opacity-100");
+              slides[current].classList.add("opacity-0");
+
+              current = (current + 1) % slides.length;
+
+              slides[current].classList.remove("opacity-0");
+              slides[current].classList.add("opacity-100");
+            }, 4000);
+          }
+        });
+
+        // Scroll animation
         const sections = document.querySelectorAll(".fade-section");
         const observer = new IntersectionObserver(
           (entries) => {
@@ -518,5 +545,50 @@
         sections.forEach((section) => observer.observe(section));
       });
     </script>
+     <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const placeholder = document.getElementById("footer-placeholder");
+          placeholder.innerHTML = data;
+
+          // Small delay so CSS applies first
+          setTimeout(() => {
+            const footer = placeholder.querySelector(".footer");
+            footer.classList.add("show-footer");
+          }, 100);
+        });
+    </script>
+     
+    <script src="/assets/js/main.js"></script>
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".fade-section");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+
+                // Stagger animation for child items
+                const items = entry.target.querySelectorAll(".stagger-item");
+                items.forEach((item, index) => {
+                  setTimeout(() => {
+                    item.classList.add("show");
+                  }, index * 150); // delay between items
+                });
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+
+        sections.forEach((section) => observer.observe(section));
+      });
+    </script> -->
   </body>
 </html>

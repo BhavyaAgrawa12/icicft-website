@@ -1,171 +1,200 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About | ICSCIS 2026</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | ICSCIS 2026</title>
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <link href="./assets/css/output.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <link
-      rel="shortcut icon"
-      href="assets/images/favicon.png"
-      type="image/x-icon"
-    />
+  <style>
+    body { animation: fadePage 0.8s ease-in-out; }
+    @keyframes fadePage { from { opacity: 0; } to { opacity: 1; } }
 
-    <link href="./assets/css/output.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    .fade-section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .fade-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
 
-    <style>
-      body {
-        animation: fadePage 0.8s ease-in-out;
-      }
+<body class="bg-gray-100 text-gray-800">
 
-      @keyframes fadePage {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+<!-- HEADER -->
+<div id="header-placeholder"></div>
 
-      .fade-section {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s ease;
-      }
-
-      .fade-section.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Hover Card */
-      .hover-card {
-        transition: all 0.35s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hover-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
-      }
-
-      .hover-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 16px;
-        border: 2px solid transparent;
-        transition: all 0.35s ease;
-      }
-
-      .hover-card:hover::after {
-        border-color: rgba(59, 130, 246, 0.4);
-      }
-    </style>
-  </head>
-
-  <body class="bg-gray-100 text-gray-800">
-    <div id="header-placeholder"></div>
-
-    <!-- HERO -->
-    <section class="pt-20 pb-8 bg-gray-100 fade-section">
-      <div class="max-w-5xl mx-auto px-6 relative">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-          <div class="slider relative w-full h-72 md:h-[450px]">
-            <div
-              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
-            >
-              <img
-                src="/assets/images/building.avif"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="/assets/images/poornima 3.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="/assets/images/footercover.webp"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div class="absolute inset-0 bg-black/10"></div>
+<!-- ================= TOP SECTION ================= -->
+<section class="pt-20 pb-8 bg-gray-100">
+  <div class="max-w-5xl mx-auto px-6 relative">
+    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+      <div class="slider relative w-full h-72 md:h-[450px]">
+        <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+          <img src="assets/images/building.avif" class="w-full h-full object-cover" />
         </div>
-
-        <div
-          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-6 text-center"
-        >
-          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-            Association
-          </h2>
-          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
+        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+          <img src="assets/images/poornima 3.webp" class="w-full h-full object-cover" />
+        </div>
+        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+          <img src="assets/images/footercover.webp" class="w-full h-full object-cover" />
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- R&D CELL -->
-    <section class="py-10 bg-gray-50 fade-section">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-        >
-          About the R&amp;D Cell
-        </h2>
+    <div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-10 py-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-primary mb-2">
+        About the Conference
+      </h2>
+      <p class="text-gray-500 text-lg">
+        2nd International Conference on Sustainable Computing and Intelligent Systems
+      </p>
+      <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full mt-3"></div>
+    </div>
+  </div>
+</section>
 
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-          <div class="hover-card bg-blue-100 rounded-2xl p-8">
-            <h3 class="text-xl font-semibold text-primary mb-4">Vision</h3>
-            <p class="text-gray-600 leading-relaxed text-justify">
-              To establish a robust mechanism for developing and strengthening
+<!-- ================= CONFERENCE OVERVIEW ================= -->
+<section class="py-24 bg-white fade-section">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+    <div>
+      <h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-yellow-400 pl-4">
+        Conference Introduction
+      </h2>
+
+      <p class="text-gray-700 leading-relaxed text-justify mb-6">
+        The 2nd International Conference on Sustainable Computing and Intelligent Systems (ICSCIS-2026) is a premier academic and research platform committed to advancing innovation in intelligent technologies and sustainable digital ecosystems. The conference is designed to address the growing demand for energy-efficient, scalable, and intelligent solutions that can support the rapidly evolving global digital landscape.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed text-justify mb-6">
+        ICSCIS-2026 brings together researchers, academicians, industry professionals, and policy experts to explore transformative developments in Artificial Intelligence, Internet of Things, Big Data Analytics, Intelligent Automation, Cyber-Physical Systems, Cloud and Edge Computing, and Green Computing technologies. The conference emphasizes sustainable design principles, responsible innovation, and technology frameworks that balance performance, efficiency, and societal impact.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed text-justify">
+        With the exponential rise of data-driven systems and interconnected infrastructures, the need for intelligent and resilient computing solutions has never been greater. ICSCIS-2026 provides a dynamic forum for presenting cutting-edge research, discussing real-world applications, and examining emerging challenges related to security, scalability, energy optimization, and digital sustainability.
+      </p>
+      <p class="text-gray-700 leading-relaxed text-justify">
+        Through keynote addresses by distinguished experts, peer-reviewed paper presentations, panel discussions, workshops, and collaborative networking sessions, the conference aims to foster interdisciplinary research partnerships and encourage industry-academia synergy. By promoting dialogue across diverse technological domains, ICSCIS-2026 aspires to shape the future of sustainable computing and intelligent systems at both national and global levels.
+      </p>
+    </div>
+
+    <div>
+      <img src="assets/images/ab1.jpg"
+           class="rounded-3xl shadow-2xl w-full transition duration-500 hover:scale-105" />
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONFERENCE STATS ================= -->
+<section class="py-20 bg-gray-100 fade-section text-center">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+    <div><h3 class="text-4xl font-bold text-primary mb-2">3+</h3><p>Conference Tracks</p></div>
+    <div><h3 class="text-4xl font-bold text-primary mb-2">4+</h3><p>Keynote Speakers</p></div>
+    <div><h3 class="text-4xl font-bold text-primary mb-2">2</h3><p>Conference Days</p></div>
+    <div><h3 class="text-4xl font-bold text-primary mb-2">4+</h3><p>Partner Organizations</p></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT POORNIMA UNIVERSITY ================= -->
+<section class="py-24 bg-white fade-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-8 border-l-4 border-yellow-400 pl-4">
+      About Poornima University
+    </h2>
+
+    <p class="text-gray-700 leading-relaxed text-justify mb-6">
+      Poornima University (PU) is a state private University in Jaipur,
+              India established by an act of the Rajasthan legislature. PU was
+              established in 2012 with a vision to create a knowledge-based
+              society with scientific temper, team spirit and dignity of labour
+              to face global competition and challenges.With modern infrastructure, strong industry collaborations, and emphasis on
+      interdisciplinary research, Poornima University actively contributes to
+      technological and societal advancement.
+    </p>
+
+    <p class="text-gray-700 leading-relaxed text-justify">
+      PU is recognized by University Grants Commission (UGC) under
+              Section 2(f) and 12(B) with the right to confer degrees as per
+              Section 22 (1) of the UGC Act, 1956. Its architecture program is
+              approved by the Council of Architecture (CoA) and the hotel
+              management program is approved by NCHMCT.Currently, PU has more than 8000+ students from all over the
+              country enrolled in nine faculties and fourteen departments of
+              UG/PG and PhD Programs in various areas such as Management,
+              Engineering, Computer Application Sciences, Architecture, Design,
+              Public Health and Hotel Management, etc.The university is committed to fostering research and innovation,
+              and this conference is part of its mission to promote cutting-edge
+              research in sustainable computing and intelligent systems.
+    </p>
+  </div>
+  <div class="text-center mt-10">
+  <a href="https://poornima.edu.in/"
+     target="_blank"
+     class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+    Read More
+    <span class="text-xl">→</span>
+  </a>
+</div>
+</section>
+
+<!-- ================= ABOUT FCE ================= -->
+<section class="py-24 bg-gray-100 fade-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-8 border-l-4 border-yellow-400 pl-4">
+      About Faculty of Computer Engineering (FCE)
+    </h2>
+
+    <p class="text-gray-700 leading-relaxed text-justify mb-6">
+      The Faculty of Computer Science & Engineering at Poornima University
+            is a dynamic hub of technological learning, innovation, and research
+            excellence. It is committed to shaping future-ready professionals
+            equipped with the skills and mindset required to excel in an
+            increasingly digital world. With a strong emphasis on emerging technologies such as Artificial
+            Intelligence, Machine Learning, Cyber Security, Cloud Computing,
+            IoT, Blockchain, Data Analytics, DevOps, and Full-Stack Development,
+            the Faculty of CSE integrates scientific knowledge with real-world
+            application.
+    </p>
+
+    <p class="text-gray-700 leading-relaxed text-justify">
+      By fostering interdisciplinary collaboration, research engagement,
+            and ethical computing practices, the Faculty of CSE plays a pivotal
+            role in driving innovation within the university. It aspires to
+            cultivate skilled engineers who can address modern challenges, adapt
+            to evolving technologies, and lead with integrity in global digital
+            environments.
+    </p>
+  </div>
+  <div class="text-center mt-10">
+  <a href="https://poornima.edu.in/academics/faculty-of-computer-science/btech/vision-mission-learning-outcomes"
+     target="_blank"
+     class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+    Read More
+    <span class="text-xl">→</span>
+  </a>
+</div>
+</section>
+
+<!-- ================= ABOUT R&D CELL ================= -->
+<section class="py-24 bg-white fade-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-8 border-l-4 border-yellow-400 pl-4">
+      About R&D Cell, Poornima University
+    </h2>
+
+    <p class="text-gray-700 leading-relaxed text-justify">
+      To establish a robust mechanism for developing and strengthening
               the research ecosystem within university to reshape industries and
               elevate society for the benefit of the world using transformative
-              innovation and advancing knowledge.
-            </p>
-          </div>
-
-          <div class="hover-card bg-blue-100 rounded-2xl p-8">
-            <h3 class="text-xl font-semibold text-primary mb-4">Mission</h3>
-            <ul class="space-y-4 text-gray-600 leading-relaxed">
-              <li class="flex gap-3">
-                <span class="font-semibold text-primary">1.</span>
-                <span class="text-justify">
-                  To create an enabling environment for enhancing research
-                  productivity.
-                </span>
-              </li>
-              <li class="flex gap-3">
-                <span class="font-semibold text-primary">2.</span>
-                <span class="text-justify">
-                  To encourage collaboration among industry, government,
-                  community-based organizations, and agencies.
-                </span>
-              </li>
-              <li class="flex gap-3">
-                <span class="font-semibold text-primary">3.</span>
-                <span class="text-justify">
-                  To facilitate greater access to research through mobilization
-                  of resources and funding.
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div
-          class="hover-card bg-gray-100 rounded-2xl p-8 text-gray-600 leading-relaxed text-justify"
-        >
-          <p>
-            Poornima University's Research and Development (R&amp;D) cell is a
+              innovation and advancing knowledge. To create an enabling environment for enhancing research
+              productivity. To encourage collaboration among industry, government,
+              community-based organizations, and agencies. To facilitate greater access to research through mobilization
+              of resources and funding. Poornima University's Research and Development (R&amp;D) cell is a
             vibrant centre of research and innovation, dedicated to advancing
             cutting-edge research in a variety of subjects and pushing the
             boundaries of knowledge for promoting advanced research across
@@ -173,25 +202,27 @@
             healthcare, education, environmental sustainability, and social
             fairness with an emphasis on interdisciplinary approaches and
             ethical research practices.
-          </p>
-        </div>
-      </div>
-    </section>
+    </p>
+  </div>
+  <div class="text-center mt-10">
+  <a href="https://poornima.edu.in/research/research-development-cell"
+     target="_blank"
+     class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+    Read More
+    <span class="text-xl">→</span>
+  </a>
+</div>
+</section>
 
-    <!-- NITTTR -->
-    <section class="py-24 bg-gray-100 fade-section">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-        >
-          About NITTTR, Bhopal
-        </h2>
+<!-- ================= ABOUT NITTTR ================= -->
+<section class="py-24 bg-gray-100 fade-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-8 border-l-4 border-yellow-400 pl-4">
+      About NITTTR
+    </h2>
 
-        <di class="grid md:grid-cols-2 gap-8 mb-12">
-          <div class="hover-card bg-blue-100 rounded-2xl p-8">
-            <h3 class="text-xl font-semibold text-primary mb-4">Vision</h3>
-            <p class="text-gray-600 leading-relaxed text-justify">
-              National Institute of Technical Teachers' Training and Research
+    <p class="text-gray-700 leading-relaxed text-justify">
+      National Institute of Technical Teachers' Training and Research
               (NITTTR), Bhopal is a premier institution established in 1965 by
               the Ministry of Education, Government of India, for teacher
               training and improving the overall quality of the Technical
@@ -202,13 +233,9 @@
               industry-institute internships, management of technical
               institutions, personality development, entrepreneurship
               development, examination reforms, and student assessment.
-            </p>
-          </div>
-
-          <div class="hover-card bg-blue-100 rounded-2xl p-8">
-            <h3 class="text-xl font-semibold text-primary mb-4"></h3>
-            <p class="text-gray-600 leading-relaxed text-justify">
-             It also specializes in instructional resource development,
+    </p>
+    <p class="text-gray-700 leading-relaxed text-justify">
+      It also specializes in instructional resource development,
               multimedia and video production, educational project planning and
               management, community development initiatives, and evaluation of
               programs and projects within the technical education ecosystem.
@@ -218,56 +245,51 @@
               resources, NITTTR continues to support quality enhancement in
               technical education through strategic collaboration and networking
               with centers of excellence.
-            </p>
-          </div>
-        </div>
-      
-    </section>
+    </p>
+  </div>
+  <div class="text-center mt-10">
+  <a href="https://nitttrbpl.ac.in/"
+     target="_blank"
+     class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+    Read More
+    <span class="text-xl">→</span>
+  </a>
+</div>
+</section>
 
-    <!-- RCAT -->
-    <section class="py-24 bg-white fade-section">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-        >
-          About RCAT
-        </h2>
+<!-- ================= ABOUT RCAT ================= -->
+<section class="py-24 bg-white fade-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-8 border-l-4 border-yellow-400 pl-4">
+      About RCAT
+    </h2>
 
-         <di class="grid md:grid-cols-2 gap-8 mb-12">
-          <div class="hover-card bg-blue-100 rounded-2xl p-8">
-            <h3 class="text-xl font-semibold text-primary mb-4">Vision</h3>
-            <p class="text-gray-600 leading-relaxed text-justify">
-              National Institute of Technical Teachers' Training and Research
-              (NITTTR), Bhopal is a premier institution established in 1965 by
-              the Ministry of Education, Government of India, for teacher
-              training and improving the overall quality of the Technical
-              Education System across the country. The Institute has developed
-              expertise through continuous research and development in areas
-              such as competency development in emerging technologies, subject
-              matter enhancement, classroom and laboratory-based learning,
-              industry-institute internships, management of technical
-              institutions, personality development, entrepreneurship
-              development, examination reforms, and student assessment.
-            </p>
-          </div>
+    <p class="text-gray-700 leading-relaxed text-justify">
+      Established by the Government of Rajasthan to enhance competency, employability and mobility of science/engineering/technology students, the youth and mid-career professionals of Rajasthan, India and the world looking forward to get trained and inducted into the advanced and emerging tech industry.
+    </p>
+    <p class="text-gray-700 leading-relaxed text-justify">
+      Rajasthan Centre of Advanced Technology (R-CAT) operates under the
+  Department of Information Technology & Communication (DoIT&C),
+  Government of Rajasthan. It focuses on advanced skill development,
+  industry-oriented training, emerging technology programs, and
+  enhancing employability across engineering and technical domains.
+    </p>
+  </div>
+  <div class="text-center mt-10">
+  <a href="https://rcat.rajasthan.gov.in/content/raj/rcat/en/home.html"
+     target="_blank"
+     class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+    Read More
+    <span class="text-xl">→</span>
+  </a>
+</div>
+</section>
 
-          <div class="hover-card bg-blue-100 rounded-2xl p-8">
-            <h3 class="text-xl font-semibold text-primary mb-4"></h3>
-            <p class="text-gray-600 leading-relaxed text-justify">
-             Rajasthan Centre of Advanced Technology (R-CAT) is formed under
-              the Society Registration Act, 1958 and is managed under the aegis
-              of the Department of Information Technology & Communication
-              (DoIT&C), Government of Rajasthan (GoR).
-               R-CAT has been established to enhance the employability of
-              engineering and technology students as well as youth of the state.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
 
-    <div id="footer-placeholder"></div>
-    <script>
+<script src="/assets/js/main.js"></script>
+<script>
       fetch("components/footer.html")
         .then((response) => response.text())
         .then((data) => {
@@ -281,37 +303,35 @@
           }, 100);
         });
     </script>
-    <script src="/assets/js/main.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const slides = document.querySelectorAll(".slide");
-        let current = 0;
 
-        if (slides.length > 0) {
-          setInterval(() => {
-            slides[current].classList.remove("opacity-100");
-            slides[current].classList.add("opacity-0");
-            current = (current + 1) % slides.length;
-            slides[current].classList.remove("opacity-0");
-            slides[current].classList.add("opacity-100");
-          }, 4000);
-        }
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-        const sections = document.querySelectorAll(".fade-section");
+  const sliders = document.querySelectorAll(".slider");
+  sliders.forEach((slider) => {
+    const slides = slider.querySelectorAll(".slide");
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove("opacity-100");
+      slides[current].classList.add("opacity-0");
+      current = (current + 1) % slides.length;
+      slides[current].classList.remove("opacity-0");
+      slides[current].classList.add("opacity-100");
+    }, 4000);
+  });
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-              }
-            });
-          },
-          { threshold: 0.15 },
-        );
+  const sections = document.querySelectorAll(".fade-section");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.15 });
 
-        sections.forEach((section) => observer.observe(section));
-      });
-    </script>
-  </body>
+  sections.forEach((section) => observer.observe(section));
+
+});
+
+</script>
+
+</body>
 </html>

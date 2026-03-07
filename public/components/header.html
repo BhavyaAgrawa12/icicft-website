@@ -1,27 +1,28 @@
 <header class="bg-white shadow-sm sticky top-0 z-50">
-  <!-- Top Bar -->
-  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-    <img
-      src="/assets/images/PU_Logo.png"
-      class="h-12"
-      alt="Poornima University"
-    />
 
-    <div class="hidden md:flex gap-6 text-sm font-semibold">
-      <div class="text-primary">AIP Conference Proceedings</div>
-      <div class="text-primary">Scopus Indexed</div>
-    </div>
+<!-- TOP BAR -->
+<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+
+  <img src="/assets/images/PU_Logo.png" class="h-12" alt="Poornima University"/>
+
+  <div class="hidden md:flex gap-6 text-sm font-semibold">
+    <div class="text-primary">AIP Conference Proceedings</div>
+    <div class="text-primary">Scopus Indexed</div>
   </div>
 
-  <!-- Navigation -->
-  <nav class="py-4">
-  <div class="max-w-7xl mx-auto px-4">
+  <button id="menuBtn" class="md:hidden text-2xl text-gray-700">
+    ☰
+  </button>
 
-    <div class="hidden md:flex justify-center">
-      
-      <div class="flex items-center gap-8 text-base font-semibold bg-white px-8 py-3 rounded-full shadow-md">
-        <!-- Desktop Menu -->
-        <ul
+</div>
+
+
+<!-- DESKTOP NAVIGATION -->
+<nav class="hidden md:flex justify-center pb-4">
+
+<div class="flex items-center gap-8 text-base font-semibold bg-white px-8 py-3 rounded-full shadow-md">
+
+ <ul
           class="hidden lg:flex gap-6 text-sm font-medium text-gray-700 items-center"
         >
           <li>
@@ -213,155 +214,71 @@
               href="/contact.html"
              class="relative hover:text-primary transition nav-link group">
             
-              Contacts
+              Contact
               <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
 
-          <!-- <li class="relative">
-            <button
-              id="contactBtn"
-              class="hover:text-primary transition flex items-center gap-1 font-medium"
-            >
-              Contact
-              <span
-                id="contactArrow"
-                class="transition-transform duration-300 transform text-xs"
-              >
-                ▼
-              </span>
-            </button>
-
-            <div
-              id="contactMenu"
-              class="absolute left-0 top-full mt-3 w-48 bg-white rounded-xl shadow-lg border border-gray-100 hidden z-50"
-            >
-              <ul class="py-2 text-sm text-gray-800 space-y-1">
-                <li>
-                  <a
-                    href="/contact.html"
-                    class="block px-4 py-2 hover:text-primary"
-                  >
-                    Contacts
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/venue.html"
-                    class="block px-4 py-2 hover:text-primary"
-                  >
-                    Venue
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li> -->
         </ul>
 
-        <!-- Mobile Toggle -->
-        <button id="menuBtn" class="lg:hidden text-gray-700 text-2xl">
-          ☰
-        </button>
-      </div>
+</div>
 
-      <!-- Mobile Menu -->
-      <div id="mobileMenu" class="hidden lg:hidden pb-4">
-        <ul class="flex flex-col gap-3 text-sm font-medium text-gray-700">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/association.html">About</a></li>
+</nav>
 
-          <!-- Mobile Call For Papers Dropdown -->
-          <li>
-            <button
-              id="mobileCfpToggle"
-              class="w-full text-left flex justify-between items-center"
-            >
-              Call for Papers
 
-              <span
-                id="mobileCfpArrow"
-                class="transition-transform duration-300"
-              >
-                ▼
-              </span>
-            </button>
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow">
 
-            <ul id="mobileCfpMenu" class="hidden pl-4 mt-2 space-y-2 text-sm">
-              <li><a href="/call-for-papers.html">Conference Track</a></li>
-              <li><a href="/special-sessions.html">Special Sessions</a></li>
-            </ul>
-          </li>
+<ul class="flex flex-col gap-3 p-4 text-sm font-medium">
 
-          <!-- Registration -->
-          <li>
-            <button
-              id="mobileRegisterToggle"
-              class="w-full text-left flex justify-between items-center"
-            >
-              Register Now
-              <span
-                id="mobileRegisterArrow"
-                class="transition-transform duration-300 transform"
-              >
-                ▼
-              </span>
-            </button>
+<li><a href="/index.html">Home</a></li>
+    <li><a href="/association.html">About</a></li>
 
-            <ul
-              id="mobileRegisterMenu"
-              class="hidden pl-4 mt-2 space-y-2 text-sm"
-            >
-              <li><a href="/submission.html">Submission</a></li>
-              <li><a href="/registration.html">Registration</a></li>
-              
-            </ul>
-          </li>
+    <li>
+      <button id="mobileCfpToggle" class="w-full flex justify-between">
+        Call for Papers
+        <span id="mobileCfpArrow">▼</span>
+      </button>
 
-          <!-- Partners -->
-          <li><a href="/partners.html">Partners</a></li>
+      <ul id="mobileCfpMenu" class="hidden pl-4 mt-2 space-y-2">
+        <li><a href="/call-for-papers.html">Conference Track</a></li>
+        <li><a href="/special-sessions.html">Special Sessions</a></li>
+      </ul>
+    </li>
 
-            <ul
-              id="mobilePartnersMenu"
-              class="hidden pl-4 mt-2 space-y-2 text-sm"
-            >
-              
-              
-            </ul>
-          </li>
+    <li>
+      <button id="mobileRegisterToggle" class="w-full flex justify-between">
+        Register Now
+        <span id="mobileRegisterArrow">▼</span>
+      </button>
 
-          <li><a href="/committee.html">Committee</a></li>
+      <ul id="mobileRegisterMenu" class="hidden pl-4 mt-2 space-y-2">
+        <li><a href="/submission.html">Submission</a></li>
+        <li><a href="/registration.html">Registration</a></li>
+      </ul>
+    </li>
 
-          <li><a href="/speakers.html">Speakers</a></li>
-          <li><a href="/sponsorship.html">Sponsorship</a></li>
-          <!-- Archives -->
-          <li>
-            <button
-              id="mobileAboutToggle"
-              class="w-full text-left flex justify-between items-center"
-            >
-              Archives
-              <span
-                id="mobileAboutArrow"
-                class="transition-transform duration-300"
-              >
-                ▼
-              </span>
-            </button>
+    <li><a href="/partners.html">Partners</a></li>
+    <li><a href="/committee.html">Committee</a></li>
+    <li><a href="/speakers.html">Speakers</a></li>
+    <li><a href="/sponsorship.html">Sponsorship</a></li>
 
-            <ul id="mobileAboutMenu" class="hidden pl-4 mt-2 space-y-2 text-sm">
-              <li>
-                <a href="/1st-AIP-conf.html" class=""> 1st AIP Conference</a>
-              </li>
-              <li>
-                <a href="/association.html" class="">2nd AIP Conference</a>
-              </li>
-            </ul>
-          </li>
-          <!-- Contacts -->
-           <li><a href="/contact.html">Contacts</a></li>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <li>
+      <button id="mobileAboutToggle" class="w-full flex justify-between">
+        Archives
+        <span id="mobileAboutArrow">▼</span>
+      </button>
+
+      <ul id="mobileAboutMenu" class="hidden pl-4 mt-2 space-y-2">
+        <li><a href="/1st-AIP-conf.html">1st AIP Conference</a></li>
+        <li><a href="/association.html">2nd AIP Conference</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/contact.html">Contact</a></li>
+
+  </ul>
+
+</div>
+
 </header>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Committee | ICSCIS 2026</title>
+    <title>Committee | ICICFT 2026</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
@@ -12,77 +12,121 @@
     <link href="./assets/css/output.css" rel="stylesheet" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
+      <style>
 
-      /* HERO BACKGROUND */
-      .hero-bg {
-        background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-      }
+  html{
+    scroll-behavior:smooth;
+  }
 
-      /* HERO FADE ANIMATION */
-      .hero-fade {
-        opacity: 0;
-        transform: translateY(40px);
-        animation: fadeUp 1s ease forwards;
-      }
+  /* PAGE LOAD */
+  body{
+    animation:fadePage 0.8s ease-in-out;
+  }
 
-      @keyframes fadeUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+  @keyframes fadePage{
+    from{opacity:0;}
+    to{opacity:1;}
+  }
 
-      /* SECTION TITLE */
-      .section-title {
-        font-size: 26px;
-        font-weight: 700;
-        color: #1e3a8a;
-        margin-bottom: 30px;
-      }
+  /* HERO */
+  .hero-bg{
+    background:linear-gradient(135deg,#1e3a8a 0%,#0f172a 100%);
+  }
 
-      /* GRID */
-      .committee-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-      }
+  .hero-fade{
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp 1s ease forwards;
+  }
 
-      /* CARD STYLE */
-      .committee-card {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 18px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-        font-size: 14px;
-        transition: 0.35s ease;
-        transform: translateY(30px);
-        opacity: 0;
-      }
+  @keyframes fadeUp{
+    to{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
 
-      .committee-card.visible {
-        transform: translateY(0);
-        opacity: 1;
-      }
+  /* SECTION */
+  .fade-section {
+      opacity: 1;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
 
-      .committee-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 18px 45px rgba(30, 58, 138, 0.15);
-      }
-      .fade-section {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s ease;
-      }
+    .fade-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-      .fade-section.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
+.section-container{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+  /* TITLE */
+  .section-title{
+    font-size:26px;
+    font-weight:700;
+    color:#1e3a8a;
+    margin-bottom:40px;
+    letter-spacing:0.5px;
+    text-align:center;
+  }
+
+  /* GRID */
+  .committee-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,380px));
+    justify-content:center;
+    gap:40px;
+  }
+
+  /* CARD */
+  .committee-card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:32px 26px;
+    text-align:center;
+    box-shadow:0 12px 32px rgba(0,0,0,0.06);
+    transition:all 0.4s ease;
+
+    opacity:1;
+    transform:translateY(30px);
+  }
+
+  /* CARD SHOW */
+  .committee-card.show{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* HOVER */
+  .committee-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 22px 55px rgba(30,58,138,0.15);
+  }
+
+  /* MEMBER TEXT */
+  .member-name{
+    font-size:19px;
+    font-weight:600;
+    color:#0f172a;
+  }
+
+  .member-role{
+    font-size:15px;
+    font-weight:500;
+    color:#1e3a8a;
+    margin-top:8px;
+  }
+
+  .member-org{
+    font-size:14px;
+    color:#555;
+    margin-top:6px;
+  }
+
+  </style>
   </head>
 
   <body class="bg-gray-50 text-gray-800">
@@ -90,16 +134,15 @@
     <div id="header-placeholder"></div>
 
     <!-- ================= HERO ================= -->
-    <section class="pt-20 pb-16 bg-gray-100 fade-section">
+    <section class="pt-20 pb-8 bg-gray-100 fade-section">
       <div class="max-w-5xl mx-auto px-6 relative">
-        <!-- Slider Container -->
-        <div class="relative rounded-3xl overflow-hidden shadow-lg hero-image">
-          <div class="slider relative w-full h-72 md:h-[420px]">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div class="slider relative w-full h-72 md:h-[450px]">
             <div
               class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
             >
               <img
-                src="assets/images/building.avif"
+                src="/assets/images/building.avif"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -108,7 +151,7 @@
               class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
             >
               <img
-                src="assets/images/poornima 3.webp"
+                src="/assets/images/poornima 3.webp"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -117,24 +160,22 @@
               class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
             >
               <img
-                src="assets/images/footercover.webp"
+                src="/assets/images/footercover.webp"
                 class="w-full h-full object-cover"
               />
             </div>
           </div>
-
           <div class="absolute inset-0 bg-black/10"></div>
         </div>
 
-        <!-- Floating Card -->
         <div
-          class="relative mt-8 mb-20 w-fit mx-auto bg-white rounded-2xl shadow-lg px-10 py-4 text-center card-animate"
+          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-5 text-center"
         >
           <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-            Committee
+            Partners & Publication 
           </h2>
-          <p class="text-base md:text-lg text-gray-500 mb-2">
-            Meet the conference organizing committee
+          <p class="text-gray-500">
+            Conference proceedings and journal publication opportunities
           </p>
           <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
         </div>
@@ -145,216 +186,466 @@
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-6 space-y-20">
         <!-- CHIEF PATRONS -->
-         <div>
-          <h2 class="section-title">CHIEF PATRONS</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Mr. Hari Singh Shekhawat, Director (Infrastructure), Poornima Group
-            </div>
-            <div class="committee-card">
-              Mr. MKM Shah, Director (Admin & Finance), Poornima Group
-            </div>
-          </div>
-        </div>
+        <div class="fade-section">
+        <h2 class="section-title">CHIEF PATRONS</h2>
+
+        <div class="committee-grid">
+
+    <!-- Card 1 -->
+    <div class="committee-card">
+      <h3 class="member-name">Mr. Hari Singh Shekhawat</h3>
+      <p class="member-role">Director (Infrastructure)</p>
+      <p class="member-org">Poornima Group</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="committee-card">
+      <h3 class="member-name">Mr. MKM Shah</h3>
+      <p class="member-role">Director (Admin & Finance)</p>
+      <p class="member-org">Poornima Group</p>
+    </div>
+
+  </div>
+</div>
 
         <!-- HONORARY PATRON -->
-        <div>
-          <h2 class="section-title">HONORARY PATRON</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Mr. Shashikant Singhi, Chairperson, PU
-            </div>
-            <div class="committee-card">
-              Dr. Suresh Chandra Padhy, President, PU
-            </div>
-            <div class="committee-card">Ar. Rahul Singhi, Director, PU</div>
-          </div>
-        </div>
+       <div class="fade-section">
+  <h2 class="section-title">HONORARY PATRON</h2>
 
-        <!-- ADVISORS -->
-        <div>
-          <h2 class="section-title">ADVISORS</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Dr. Ankush Jain, Dean Academics, PU
-            </div>
-            <div class="committee-card">
-              Dr. Chandni Kripalani, Pro-President, PU
-            </div>
-            <div class="committee-card">Ar. Manjiri Rai, Pro-President, PU</div>
-            <div class="committee-card">
-              Dr. Devendar Somwanshi, Registrar, PU
-            </div>
-            <div class="committee-card">
-              Dr. Mahesh M. Bundele, Principal, PCE
-            </div>
-            <div class="committee-card">Dr. Dinesh Goyal, Principal, PIET</div>
+  <div class="committee-grid">
+
+   
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Suresh Chandra Padhy</div>
+      <div class="member-role">President</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Rahul Singhi</div>
+      <div class="member-role">Director</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+
+     <div class="committee-card">
+      <div class="member-name">Mr. Shashikant Singhi</div>
+      <div class="member-role">Chairperson</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
           </div>
-        </div>
+        <!-- ADVISORS -->
+        <div class="fade-section">
+  <h2 class="section-title">ADVISORS</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Manoj Gupta</div>
+      <div class="member-role">Pro-President</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Chandni Kripalani</div>
+      <div class="member-role">Pro-President</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Ankush Jain</div>
+      <div class="member-role">Dean Academics</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Devendar Somwanshi</div>
+      <div class="member-role">Registrar</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Mahesh M. Bundele</div>
+      <div class="member-role">Principal</div>
+      <div class="member-org">Poornima College of Engineering</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Dinesh Goyal</div>
+      <div class="member-role">Principal</div>
+      <div class="member-org">Poornima Institute of Engineering & Technology</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Ajay Khunteta</div>
+      <div class="member-role">Dean FCE</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+  </div>
+          </div>
 
         <!-- CONFERENCE CHAIRS -->
-        <div>
+        <div class ="fade-section">
           <h2 class="section-title">CONFERENCE CHAIRS</h2>
-          <div class="committee-grid">
+          <!-- <div class="committee-grid">
             <div class="committee-card">Dr. Manoj Gupta, Pro-President, PU</div>
             <div class="committee-card">Dr. Ajay Khunteta, Dean FCE, PU</div>
-          </div>
+          </div> -->
         </div>
 
         <!-- CONFERENCE CO-CHAIRS -->
-        <div>
+        <div class="fade-section">
           <h2 class="section-title">CONFERENCE CO-CHAIRS</h2>
-          <div class="committee-grid">
-            <div class="committee-card">Dr. Shikha Sharma, HOD FCE, PU</div>
-          </div>
-        </div>
+
+            <div class="committee-grid">
+
+                <div class="committee-card">
+                <div class="member-name">Prof. (Dr.) Arun Chougule</div>
+                <div class="member-role"> Dean Academics SKGI (Former Propresident RUHS)</div>
+      <!-- <div class="member-org">Poornima University</div> -->
+            </div>
+
+  </div>
+</div>
 
         <!-- CONVENER -->
-        <div>
-          <h2 class="section-title">CONVENER</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Dr. Saurabh Shandilya, Professor, PU
-            </div>
-            <div class="committee-card">
-              Dr. Udit Mamodiya, Associate Dean Research, PU
-            </div>
-          </div>
-        </div>
+        <div class="fade-section">
+  <h2 class="section-title">CONVENER</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Udit Mamodiya</div>
+      <div class="member-role">Associate Dean Research</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Saurabh Shandilya</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Shikha Sharma</div>
+      <div class="member-role">HOD, FCE</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
 
         <!-- CO-CONVENER -->
-        <div>
-          <h2 class="section-title">CO-CONVENER</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Dr. Sumit Kapoor, Associate Professor, PU
-            </div>
-            <div class="committee-card">Dr. Shrikant Verma, Professor, PU</div>
-          </div>
-        </div>
+        <div class="fade-section">
+  <h2 class="section-title">CO-CONVENER</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Kriti Sankhla</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Ravi Soni</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
 
         <!--CONFERENCE ORGANIZING SECRETARIES-->
-        <div>
-          <h2 class="section-title">CONFERENCE ORGANIZING SECRETARIES</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Dr. Kriti Sankhla, Associate Professor, PU
-            </div>
-            <div class="committee-card">
-              Mr. Firdos Alam Sheikh, Assistant Professor, PU
-            </div>
-            <div class="committee-card">
-              Dr. Bright Keshwani, R&amp;D Cell, PU
-            </div>
-            <div class="committee-card">Dr. Ashish Awasthi, Professor, PU</div>
-          </div>
-        </div>
+       <div class="fade-section">
+  <h2 class="section-title">CONFERENCE ORGANIZING SECRETARIES</h2>
+
+  <div class="committee-grid">
+
+    <!-- 1 -->
+    <div class="committee-card">
+      <div class="member-name">Prof. Rajeev Agrawal</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">MNIT, Jaipur</div>
+    </div>
+
+    <!-- 2 -->
+    <div class="committee-card">
+      <div class="member-name">Dr. Vishal Gour</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Dept. of Computer Application, Engineering College Bikaner, Rajasthan, India</div>
+    </div>
+
+    <!-- 3 -->
+    <div class="committee-card">
+      <div class="member-name">Dr. Udit Mamodiya</div>
+      <div class="member-role">Associate Dean Research</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <!-- Existing Members -->
+    <div class="committee-card">
+      <div class="member-name">Dr. Ashish Awasthi</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Kriti Sankhla</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Sumit Kapoor</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Shikha Khullar</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Firdos Alam Sheikh</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
 
         <!--ORGANIZING CHAIRS-->
-        <div>
-          <h2 class="section-title">ORGANIZING CHAIRS</h2>
-          <div class="committee-grid">
-            <div class="committee-card">Mr. Sunil Bhargava, Director, PIHM</div>
-            <div class="committee-card">Dr. Priti Kaushik, Dean (FSH)</div>
-            <div class="committee-card">Dr. Jitendra Sharma, Dean (FDA)</div>
-            <div class="committee-card">Dr. Ankush Kumar Jain, Dean (FET)</div>
-            <div class="committee-card">
-              Dr. Rakesh Kumar Gupta, Dean (Student Welfare)
-            </div>
-            <div class="committee-card">
-              Dr. Swati Gokhru, Dean (International Relations)
-            </div>
-            <div class="committee-card">
-              Dr. Ajay Kumar Pagare, Associate Dean (IQAC)
-            </div>
-            <div class="committee-card">
-              Dr. Sushil Kumar Jain, Associate Dean (Academics)
-            </div>
-            <div class="committee-card">Dr. Pooja Gupta, Dean (I/C – FIRE)</div>
-            <div class="committee-card">Mr. Naval Kishor Jain, COE</div>
-          </div>
-        </div>
+        <div class="fade-section">
+  <h2 class="section-title">ORGANIZING CHAIRS</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Sunil Bhargava</div>
+      <div class="member-role">Director, PIHM</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Priti Kaushik</div>
+      <div class="member-role">Dean (FSH)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Jitendra Sharma</div>
+      <div class="member-role">Dean (FDA)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Ankush Kumar Jain</div>
+      <div class="member-role">Dean (FET)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Rakesh Kumar Gupta</div>
+      <div class="member-role">Dean (Student Welfare)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Swati Gokhru</div>
+      <div class="member-role">Dean (International Relations)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Ajay Kumar Pagare</div>
+      <div class="member-role">Associate Dean (IQAC)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Sushil Kumar Jain</div>
+      <div class="member-role">Associate Dean (Academics)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Pooja Gupta</div>
+      <div class="member-role">Dean (I/C – FIRE)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Naval Kishor Jain</div>
+      <div class="member-role">COE</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
 
         <!--ORGANIZING CO-CHAIRS-->
-        <div>
-          <h2 class="section-title">ORGANIZING CO-CHAIRS</h2>
-          <div class="committee-grid">
-            <div class="committee-card">Dr. Vishnu Sharma HOD MCA</div>
-            <div class="committee-card">
-              Dr. Savita Shivani HOD BCA (Higher)
-            </div>
-            <div class="committee-card">
-              Dr. Pratish Rawat, HOD – Department of First year, FET &amp; FCE
-            </div>
-            <div class="committee-card">
-              Ms. Abhilasha Khandelwal, Dy-HOD B.Tech. Higher(FET)
-            </div>
-            <div class="committee-card">
-              Dr. Deepika Saxena, HOD BCA First Year
-            </div>
-            <div class="committee-card">
-              Dr. Manali Pareek Dy-HOD BCA Higher
-            </div>
-            <div class="committee-card">Ms. Kavita Lal DyHOD MCA</div>
-            <div class="committee-card">Dr. Imran Mirza Dy-BCA First Year</div>
-            <div class="committee-card">
-              Dr. Devesh Kumar, HOD - Department of Mechanical Engineering
-            </div>
-            <div class="committee-card">
-              Dr. Ashish Raj, HOD - Department of Electrical &amp; Electronics
-              Engineering
-            </div>
-            <div class="committee-card">
-              Dr. Gaurav Malpani, HOD - Department of Commerce
-            </div>
-            <div class="committee-card">
-              Dr. Monika Khatri, HOD - Department of Management (BBA)
-            </div>
-            <div class="committee-card">
-              Dr. Urvashi Bhamboo, HOD - Department of Management (MBA)
-            </div>
-            <div class="committee-card">
-              Ms. Shikha Sharma, HOD - Department of Computer Science &amp;
-              Engineering (B.Tech II to IV year)
-            </div>
-            <div class="committee-card">Mr. K. K. Parihar, HOD – PIHM</div>
-            <div class="committee-card">
-              Ms. Sunita Prareek, Chief Librarian
-            </div>
-          </div>
-        </div>
+        <div class="fade-section">
+  <h2 class="section-title">ORGANIZING CO-CHAIRS</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Vishnu Sharma</div>
+      <div class="member-role">HOD, MCA</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Savita Shivani</div>
+      <div class="member-role">HOD, BCA (Higher)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Pratish Rawat</div>
+      <div class="member-role">HOD – Department of First Year (FET & FCE)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Abhilasha Khandelwal</div>
+      <div class="member-role">Dy-HOD, B.Tech Higher (FET)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Deepika Saxena</div>
+      <div class="member-role">HOD, BCA First Year</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Manali Pareek</div>
+      <div class="member-role">Dy-HOD, BCA Higher</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Kavita Lal</div>
+      <div class="member-role">Dy-HOD, MCA</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Imran Mirza</div>
+      <div class="member-role">Dy-HOD, BCA First Year</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Devesh Kumar</div>
+      <div class="member-role">HOD – Mechanical Engineering</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Ashish Raj</div>
+      <div class="member-role">HOD – Electrical & Electronics Engineering</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Gaurav Malpani</div>
+      <div class="member-role">HOD – Commerce</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Monika Khatri</div>
+      <div class="member-role">HOD – Management (BBA)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Urvashi Bhamboo</div>
+      <div class="member-role">HOD – Management (MBA)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Shikha Sharma</div>
+      <div class="member-role">HOD – Computer Science & Engineering (B.Tech II–IV Year)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. K. K. Parihar</div>
+      <div class="member-role">HOD, PIHM</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Sunita Prareek</div>
+      <div class="member-role">Chief Librarian</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
         <!-- TECHNICAL PROGRAM CHAIRS -->
-        <div>
-          <h2 class="section-title">TECHNICAL PROGRAM CHAIRS</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Dr. Devendra Somwanshi, Registrar, PCE
-            </div>
-            <div class="committee-card">Dr. Gautam Singh, Registrar, PIET</div>
-            <div class="committee-card">
-              Dr. Vishnu Sharma, HOD – Department of Computer Science &
-              Application (MCA &BCA higher classes)
-            </div>
-            <div class="committee-card">
-              Ms. Kavita Lal, HOD – Department of Computer Science & Application
-              (MCA & BCA first year)
-            </div>
-            <div class="committee-card">
-              Dr. Pooja Gupta, HOD - Faculty of Innovation, Research, and
-              Entrepreneurship
-            </div>
-            <div class="committee-card">
-              Mr. Kumar Rahul Mayank, HOD - Department of Fashion, Textile &
-              Apparel Design
-            </div>
-            <div class="committee-card">
-              Md. Firdos Sheikh, Deputy HOD - Department of Computer Science &
-              Engineering
-            </div>
-          </div>
-        </div>
+        <div class="fade-section">
+  <h2 class="section-title">TECHNICAL PROGRAM CHAIRS</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Devendra Somwanshi</div>
+      <div class="member-role">Registrar</div>
+      <div class="member-org">Poornima College of Engineering (PCE)</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Gautam Singh</div>
+      <div class="member-role">Registrar</div>
+      <div class="member-org">Poornima Institute of Engineering & Technology (PIET)</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Vishnu Sharma</div>
+      <div class="member-role">HOD – Computer Science & Application (MCA & BCA Higher Classes)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Kavita Lal</div>
+      <div class="member-role">HOD – Computer Science & Application (MCA & BCA First Year)</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Pooja Gupta</div>
+      <div class="member-role">HOD – Faculty of Innovation, Research & Entrepreneurship</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Kumar Rahul Mayank</div>
+      <div class="member-role">HOD – Fashion, Textile & Apparel Design</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Firdos Alam Sheikh</div>
+      <div class="member-role">Deputy HOD – Computer Science & Engineering</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
         <!-- INTERNATIONAL ADVISORY COMMITTEE -->
-        <div>
+        <div class ="fade-section">
           <h2 class="section-title">INTERNATIONAL ADVISORY COMMITTEE</h2>
           <div class="committee-grid">
             <div class="committee-card">
@@ -562,7 +853,7 @@
         </div>
 
         <!--NATIONAL ADVISORY COMMITTEE-->
-        <div>
+        <div class ="fade-section">
           <h2 class="section-title">NATIONAL ADVISORY COMMITTEE</h2>
           <div class="committee-grid">
             <div class="committee-card">
@@ -872,152 +1163,383 @@
         </div>
 
         <!-- FINANCE COMMITTEE  -->
-        <div>
-          <h2 class="section-title">FINANCE COMMITTEE</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Dr. Saurabh Shandilya, Professor, PU
-            </div>
-            <div class="committee-card">
-              Dr. Udit Mamodiya, Associate Dean Research, PU
-            </div>
-            <div class="committee-card">
-              Dr. Sumit Kapoor, Associate Professor, PU
-            </div>
-          </div>
-        </div>
+        <div class="fade-section">
+  <h2 class="section-title">FINANCE COMMITTEE</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Saurabh Shandilya</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Udit Mamodiya</div>
+      <div class="member-role">Associate Dean Research</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Sumit Kapoor</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
         <!--  PUBLICITY AND SPONSORSHIP COMMITTEE-->
-        <h2 class="section-title">PUBLICITY AND SPONSORSHIP COMMITTEE</h2>
-        <div class="committee-grid">
-          <div class="committee-card">Dr. Vipin Khattri, Professor, PU</div>
-          <div class="committee-card">
-            Dr. Shikha Kulhar, Associate Professor, PU
-          </div>
-          <div class="committee-card">Dr. Priyanka Mishra, Professor, PU</div>
-          <div class="committee-card">Dr. Vrishali</div>
-          <div class="committee-card">
-            Dr. Richa Mathur, Associate Professor, PU
-          </div>
-          <div class="committee-card">
-            Dr. Monika Dandhodiya, Assistant Professor, PU
-          </div>
-          <div class="committee-card">Dr. Amit Hirawat, Professor, PU</div>
-          <div class="committee-card">
-            Mr. Harish Pamnani, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Mr. Firdos Alam Sheikh, Assistant Professor, PU
-          </div>
-          <div class="committee-card">Dr. Priyanka Verma, Professor, PU</div>
-          <div class="committee-card">
-            Ms. Sunita Pareek, Chief Librarian, Central Library
-          </div>
-          <div class="committee-card">
-            Mr. Anmol Chaturvedi, Assistant Professor
-          </div>
-        </div>
+        <div class="fade-section">
+  <h2 class="section-title">PUBLICITY AND SPONSORSHIP COMMITTEE</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Vipin Khattri</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Shikha Kulhar</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Priyanka Mishra</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Vrishali</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Richa Mathur</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Monika Dandhodiya</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Amit Hirawat</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Harish Pamnani</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Firdos Alam Sheikh</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Priyanka Verma</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Sunita Pareek</div>
+      <div class="member-role">Chief Librarian</div>
+      <div class="member-org">Central Library, Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Anmol Chaturvedi</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
         <!-- TRACK CHAIR -->
-        <h2 class="section-title">TRACK CHAIR</h2>
-        <div class="committee-grid">
-          <div class="committee-card">
-            Dr. Kriti Sankhla, Associate Professor , PU
-          </div>
-          <div class="committee-card">
-            Dr. Shikha Khullar, Associate Professor, PU
-          </div>
-          <div class="committee-card">Dr. Priyanka Mishra, Professor, PU</div>
-          <div class="committee-card">
-            Dr. Ravi Soni, Assistant Professor, PU
-          </div>
-          <div class="committee-card">Dr. Priyanka Verma, Professor, PU</div>
-          <div class="committee-card">
-            Mr. Harish Pamnani, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Ms. Abhilasha Khandelwal, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Dr. Mirza Samiulla Beg, Associate Professor , PU
-          </div>
-          <div class="committee-card">
-            Dr. Vinay kumar, Associate Professor , PU
-          </div>
-          <div class="committee-card">Dr. Ashish Awasthi, Professor, PU</div>
-          <div class="committee-card">
-            Dr. Bindiya Jain, Associate Professor, PU
-          </div>
-          <div class="committee-card">Dr. Bright Keshwani, Professor, PU</div>
-        </div>
+        <div class="fade-section">
+  <h2 class="section-title">TRACK CHAIR</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Kriti Sankhla</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Shikha Khullar</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Priyanka Mishra</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Ravi Soni</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Priyanka Verma</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Harish Pamnani</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Abhilasha Khandelwal</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Mirza Samiulla Beg</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Vinay Kumar</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Ashish Awasthi</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Bindiya Jain</div>
+      <div class="member-role">Associate Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Dr. Bright Keshwani</div>
+      <div class="member-role">Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
+        
         <!-- STUDENT COORDINATOR -->
-        <h2 class="section-title">STUDENT COORDINATOR</h2>
-        <div class="committee-grid">
-          <div class="committee-card">Bhavya Agrawal</div>
-          <div class="committee-card">Bhumika Aggarwal</div>
-          <div class="committee-card">Bhavna Bharti</div>
-        </div>
+        <div class="fade-section">
+  <h2 class="section-title">STUDENT COORDINATOR</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Bhavya Agrawal</div>
+      <div class="member-role">Student Coordinator</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Bhumika Aggarwal</div>
+      <div class="member-role">Student Coordinator</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Bhavna Bharti</div>
+      <div class="member-role">Student Coordinator</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
+        
         <!-- HOSPITALITY COMMITTEE -->
-        <h2 class="section-title">HOSPITALITY COMMITTEE</h2>
-        <div class="committee-grid">
-          <div class="committee-card">
-            Mr. Sagar Kumar, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Mr. Ankit Khandelwal, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Ms. Nikita Sharma, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Ms. Manisha Gaur, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Mr. Satish Bansal, Assistant Professor, PU
-          </div>
-        </div>
-        <!-- MEDIA COORDINATION COMMITTEE -->
-        <h2 class="section-title">MEDIA COORDINATION COMMITTEE</h2>
-        <div class="committee-grid">
-          <div class="committee-card">
-            Ms. Garima Jain, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Ms.Shakshi Kanwar Ranawat, Assistant Professor, PU
-          </div>
-        </div>
+         <div class="fade-section">
+  <h2 class="section-title">HOSPITALITY COMMITTEE</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Sagar Kumar</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Ankit Khandelwal</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Nikita Sharma</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Manisha Gaur</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Mr. Satish Bansal</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- MEDIA COORDINATION COMMITTEE -->
+
+<div class="fade-section">
+  <h2 class="section-title">MEDIA COORDINATION COMMITTEE</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Garima Jain</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Shakshi Kanwar Ranawat</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
         <!-- CONFERENCE WEB ADMIN -->
-        <h2 class="section-title">CONFERENCE WEB ADMIN</h2>
-        <div class="committee-grid">
-          <div class="committee-card">Bhavya Agrawal</div>
-          <div class="committee-card">Bhumika Aggarwal</div>
-          <div class="committee-card">Bhavna Bharti</div>
+        <div class="fade-section">
+  <h2 class="section-title">CONFERENCE WEB ADMIN</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Bhavya Agrawal</div>
+      <div class="member-role">Conference Web Administrator</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Bhumika Aggarwal</div>
+      <div class="member-role">Conference Web Administrator</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Bhavna Bharti</div>
+      <div class="member-role">Conference Web Administrator</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
         </div>
+        
         <!-- REGISTRATION COMMITTEE -->
-        <h2 class="section-title">REGISTRATION COMMITTEE</h2>
-        <div class="committee-grid">
-          <div class="committee-card">
-            Ms. Seema Kaloria, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Ms. Neha Jain, Assistant Professor, PU
-          </div>
-          <div class="committee-card">
-            Ms. Priya Tanwar, Teaching Assistant, PU
-          </div>
-          <div class="committee-card">
-            Ms. Harleen Kaur, Teaching Assistant, PU
-          </div>
-        </div>
+         <div class="fade-section">
+  <h2 class="section-title">REGISTRATION COMMITTEE</h2>
+
+  <div class="committee-grid">
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Seema Kaloria</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Neha Jain</div>
+      <div class="member-role">Assistant Professor</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Priya Tanwar</div>
+      <div class="member-role">Teaching Assistant</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+    <div class="committee-card">
+      <div class="member-name">Ms. Harleen Kaur</div>
+      <div class="member-role">Teaching Assistant</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+
+  </div>
+</div>
+        
         <!-- TECHNICAL NETWORK ADMINISTRATOR -->
-        <h2 class="section-title">TECHNICAL NETWORK ADMINISTRATOR</h2>
-        <div class="committee-grid">
-          <div class="committee-card">
-            Mr. Praful Kumar Dubey, Network Administrator
-          </div>
-        </div>
-      </div>
+        
+<div class="fade-section">
+  <h2 class="section-title">TECHNICAL NETWORK ADMINISTRATOR</h2>
+
+  <div class="committee-grid">
+    <div class="committee-card">
+      <div class="member-name">Mr. Praful Kumar Dubey</div>
+      <div class="member-role">Network Administrator</div>
+      <div class="member-org">Poornima University</div>
+    </div>
+  </div>
+
+</div>
     </section>
 
     <div id="footer-placeholder"></div>
+
+    <script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("show");
+
+      const cards = entry.target.querySelectorAll(".committee-card");
+
+      cards.forEach((card,i)=>{
+        setTimeout(()=>{
+          card.classList.add("visible");
+        }, i*40);
+      });
+
+    }
+  });
+},{
+  threshold:0.15
+});
+
+document.querySelectorAll(".fade-section").forEach(section=>{
+  observer.observe(section);
+});
+</script>
 
     <script>
       fetch("components/footer.html")

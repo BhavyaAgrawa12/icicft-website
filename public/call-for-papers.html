@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Call for Papers | ICSCIS 2026</title>
+    <title>Call for Papers | ICICFT 2026</title>
     <link
       rel="shortcut icon"
       href="assets/images/favicon.png"
@@ -13,81 +13,138 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <style>
-      /* Page Fade */
-      body {
-        animation: fadePage 0.8s ease-in-out;
-      }
 
-      @keyframes fadePage {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+/* Page Fade */
+body{
+  animation:fadePage 0.8s ease-in-out;
+}
 
-      /* Scroll Animation */
-      .fade-section {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s ease;
-      }
+@keyframes fadePage{
+  from{opacity:0;}
+  to{opacity:1;}
+}
 
-      .fade-section.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
+/* Scroll Animation */
+.fade-section{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
 
-      /* Track Cards */
-      .track-card {
-        background: #ffffff;
-        border-left: 4px solid #1e3a8a;
-        border-radius: 16px;
-        padding: 40px;
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
-        transition: all 0.4s ease;
-      }
+.fade-section.show{
+  opacity:1;
+  transform:translateY(0);
+}
 
-      .track-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 45px rgba(30, 58, 138, 0.12);
-        background: #f8fafc;
-      }
+/* Track Card */
+.track-card{
+  background:#ffffff;
+  border-left:4px solid #1e3a8a;
+  border-radius:16px;
+  padding:32px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.04);
+  transition:all 0.35s ease;
+}
 
-      .track-card h3 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #1e3a8a;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
+.track-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 50px rgba(30,58,138,0.12);
+  background:#f8fafc;
+}
+.track-group h3{
+  font-size:24px;
+  font-weight:700;
+  color:#1e3a8a;
+  text-align:center;
+  margin:60px 0 30px 0;
+  letter-spacing:0.5px;
+}
 
-      .track-card ul {
-        list-style: none;
-        padding-left: 0;
-      }
+/* Title */
+.track-card h3{
+  font-size:1.05rem;
+  font-weight:600;
+  color:#1e3a8a;
+  margin-bottom:20px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
 
-      .track-card ul li {
-        position: relative;
-        padding-left: 18px;
-        margin-bottom: 8px;
-        font-size: 0.9rem;
-        color: #374151;
-      }
+/* GRID FOR TRACK ITEMS */
+.track-card ul{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);   /* 3 columns like PIET */
+  gap:10px;
+  padding:0;
+  margin:0;
+  list-style:none;
+}
 
-      .track-card ul li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 8px;
-        width: 6px;
-        height: 6px;
-        background: #1e3a8a;
-        border-radius: 50%;
-      }
-    </style>
+/* TRACK PILLS */
+.track-card ul li{
+  background:#f1f5f9;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:13px;
+  color:#334155;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:0.25s ease;
+}
+
+/* small blue dot */
+.track-card ul li::before{
+  content:"";
+  width:6px;
+  height:6px;
+  background:#60a5fa;
+  border-radius:50%;
+}
+
+/* hover */
+.track-card ul li:hover{
+  background:#e2e8f0;
+  transform:translateY(-2px);
+}
+
+/* TRACK GRID */
+.tracks-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+
+/* TRACK PILLS */
+.track-pill{
+  background:#ffffff;
+  padding:10px 14px;
+  border-radius:20px;
+  font-size:14px;
+  color:#334155;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  transition:all 0.25s ease;
+}
+
+/* BLUE DOT ICON */
+.track-pill::before{
+  content:"";
+  width:8px;
+  height:8px;
+  background:#60a5fa;
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+/* HOVER EFFECT */
+.track-pill:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+  </style>
   </head>
 
   <body class="bg-gray-100 text-gray-800">
@@ -137,7 +194,7 @@
             Call for Papers
           </h2>
           <p class="text-base md:text-lg text-gray-500 mb-2">
-            ICSCIS 2026 invites original research papers
+            ICICFT 2026 invites original research papers
           </p>
           <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
         </div>
@@ -152,109 +209,122 @@
         </h2>
 
         <div
-          class="bg-gray-50 p-12 rounded-2xl shadow-sm border border-gray-200"
-        >
-          <p class="text-gray-700 leading-relaxed text-justify mb-6">
-            The theme of the conference will be
-            <span class="font-bold italic"
-              >“Intelligent Systems and Solutions for a Sustainable
-              Future”.</span
-            >
-            Besides contributions addressing the conference theme, ICSCIS also
-            welcomes authors to submit their original research results in
-            traditional research topics across broad application and functional
-            domains, within the context of intelligent and sustainable
-            computing.
-          </p>
+  class="bg-gray-50 p-12 rounded-2xl shadow-sm border border-gray-200"
+>
+  <p class="text-gray-700 leading-relaxed text-justify mb-6">
+    The theme of the conference will be
+    <span class="font-bold italic">
+      “Intelligent Computing and Future Technologies”.</span>
+    Besides contributions addressing the conference theme, ICICFT also
+    welcomes authors to submit their original research results in
+    traditional and emerging research areas across a wide range of
+    application and technological domains within the context of
+    intelligent computing and next-generation digital technologies.
+  </p>
 
-          <p class="text-gray-700 leading-relaxed text-justify">
-            The research areas include, but are not limited to the following
-            tracks mentioned below.
-          </p>
-        </div>
+  <p class="text-gray-700 leading-relaxed text-justify">
+    The research areas include, but are not limited to the following
+    tracks mentioned below.
+  </p>
+</div>
       </div>
     </section>
 
     <!-- ================= TRACKS ================= -->
     <section class="py-24 bg-gray-100 fade-section">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-primary mb-16">
-          Conference Tracks
-        </h2>
+  <div class="max-w-7xl mx-auto px-6">
 
-        <div class="grid md:grid-cols-2 gap-12">
-          <!-- Track Card Template -->
-          <div class="track-card fade-in">
-            <h3>Track 1</h3>
-            <ul>
-              <li>Society of Apps</li>
-              <li>Sentiment Analysis</li>
-              <li>Speech Technologies</li>
-              <li>Sensors and actuators</li>
-              <li>Cyber Physical Systems</li>
-              <li>Business/web intelligence</li>
-              <li>Mobile and vehicular networks</li>
-              <li>Smart and autonomous systems</li>
-              <li>Human Computer Interaction (HCI)</li>
-              <li>Smart infrastructure and governance</li>
-              <li>Computer vision and virtual environment</li>
-              <li>Conversational AI, Chatbot and virtual agents</li>
-            </ul>
-          </div>
+    <h2 class="text-3xl font-bold text-center text-primary mb-16">
+      Conference Tracks
+    </h2>
 
-          <div class="track-card fade-in">
-            <h3>Track 2</h3>
-            <ul>
-              <li>Optical fibre</li>
-              <li>Deep learning</li>
-              <li>Machine learning</li>
-              <li>Wireless networks</li>
-              <li>Wearable systems</li>
-              <li>Unmanned systems</li>
-              <li>Pattern recognition</li>
-              <li>Measurement systems</li>
-              <li>Internet of Things (IoT)</li>
-              <li>Artificial Intelligence (AI)</li>
-              <li>Smart grid & control system</li>
-              <li>Smart cyber physical systems</li>
-              <li>Neural-computing and knowledge-based learning</li>
-            </ul>
-          </div>
-
-          <div class="track-card fade-in">
-            <h3>Track 3</h3>
-            <ul>
-              <li>Smart cities</li>
-              <li>Soft computing</li>
-              <li>Green computing</li>
-              <li>Big data & data analytics</li>
-              <li>Reconfigurable computing</li>
-              <li>Sustainable high-performance systems</li>
-              <li>Sustainable communication and security</li>
-              <li>Sustainable informatics and optimization</li>
-              <li>Complex systems: modelling and simulation</li>
-              <li>Blockchain for decentralized sustainable application</li>
-            </ul>
-          </div>
-
-          <div class="track-card fade-in">
-            <h3>Track 4</h3>
-            <ul>
-              <li>Drones</li>
-              <li>Medical Electronics</li>
-              <li>Embedded Architectures</li>
-              <li>Embedded Machine Learning</li>
-              <li>Real-Time Operating Systems</li>
-              <li>Smart Manufacturing Systems</li>
-              <li>From Industry 4.0 to Industry 5.0</li>
-              <li>Microcontrollers and Applications</li>
-              <li>Embedded Cybersecurity and Cryptography</li>
-              <li>System on Chip (SOC) and Semiconductor Technology</li>
-            </ul>
-          </div>
-        </div>
+    <!-- TRACK 1 -->
+    <div class="track-group">
+      <h3>Track 1: Artificial Intelligence and Intelligent Systems</h3>
+      <div class="tracks-grid">
+        <div class="track-pill">Machine Learning</div>
+        <div class="track-pill">Deep Learning</div>
+        <div class="track-pill">Neural Networks</div>
+        <div class="track-pill">Natural Language Processing</div>
+        <div class="track-pill">Computer Vision</div>
+        <div class="track-pill">Pattern Recognition</div>
+        <div class="track-pill">Expert Systems</div>
+        <div class="track-pill">Cognitive Computing</div>
+        <div class="track-pill">Reinforcement Learning</div>
+        <div class="track-pill">AI Applications in Industry and Society</div>
       </div>
-    </section>
+    </div>
+
+    <!-- TRACK 2 -->
+    <div class="track-group">
+      <h3>Track 2: Data Science, Analytics and Intelligent Decision Systems</h3>
+      <div class="tracks-grid">
+        <div class="track-pill">Big Data Analytics</div>
+        <div class="track-pill">Data Mining</div>
+        <div class="track-pill">Knowledge Discovery in Databases</div>
+        <div class="track-pill">Predictive Analytics</div>
+        <div class="track-pill">Business Intelligence</div>
+        <div class="track-pill">Data Visualization</div>
+        <div class="track-pill">Data Engineering</div>
+        <div class="track-pill">Scientific Computing</div>
+        <div class="track-pill">Information Retrieval</div>
+        <div class="track-pill">Intelligent Data Processing</div>
+      </div>
+    </div>
+
+    <!-- TRACK 3 -->
+    <div class="track-group">
+      <h3>Track 3: Cyber Security, Networks and Distributed Computing</h3>
+      <div class="tracks-grid">
+        <div class="track-pill">Network Security</div>
+        <div class="track-pill">Cryptography and Data Encryption</div>
+        <div class="track-pill">Digital Forensics</div>
+        <div class="track-pill">Computer Networks</div>
+        <div class="track-pill">Cloud Computing</div>
+        <div class="track-pill">Distributed and Parallel Computing</div>
+        <div class="track-pill">Wireless Networks</div>
+        <div class="track-pill">Blockchain Security</div>
+        <div class="track-pill">Privacy Preserving Technologies</div>
+        <div class="track-pill">Secure Computing Systems</div>
+      </div>
+    </div>
+
+    <!-- TRACK 4 -->
+    <div class="track-group">
+      <h3>Track 4: Internet of Things, Smart Systems and Emerging Technologies</h3>
+      <div class="tracks-grid">
+        <div class="track-pill">Internet of Things (IoT)</div>
+        <div class="track-pill">Wireless Sensor Networks</div>
+        <div class="track-pill">Embedded Systems</div>
+        <div class="track-pill">Edge and Fog Computing</div>
+        <div class="track-pill">Robotics and Automation</div>
+        <div class="track-pill">Cyber-Physical Systems</div>
+        <div class="track-pill">Smart Cities and Smart Infrastructure</div>
+        <div class="track-pill">Augmented Reality and Virtual Reality</div>
+        <div class="track-pill">Quantum Computing</div>
+        <div class="track-pill">Green and Sustainable Computing</div>
+      </div>
+    </div>
+
+    <!-- TRACK 5 -->
+    <div class="track-group">
+      <h3>Track 5: Intelligent Computing Applications in Healthcare and Society</h3>
+      <div class="tracks-grid">
+        <div class="track-pill">AI in Healthcare</div>
+        <div class="track-pill">Medical Image Processing</div>
+        <div class="track-pill">Health Informatics</div>
+        <div class="track-pill">Bioinformatics and Computational Biology</div>
+        <div class="track-pill">Disease Prediction using Machine Learning</div>
+        <div class="track-pill">Smart Healthcare Systems</div>
+        <div class="track-pill">Wearable Health Monitoring Systems</div>
+        <div class="track-pill">Telemedicine and Digital Healthcare</div>
+        <div class="track-pill">Healthcare Data Analytics</div>
+        <div class="track-pill">Intelligent Systems for Agriculture, Education and Environment</div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <!-- ================= NOTE + CTA ================= -->
     <section class="py-20 bg-white text-center fade-section">

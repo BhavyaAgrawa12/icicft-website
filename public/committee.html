@@ -1023,12 +1023,185 @@
 </div>
 
 <!--INTERNATIONAL ADVISORY COMMITTEE -->
-        <div class ="fade-section">
-          <h2 class="section-title">INTERNATIONAL ADVISORY COMMITTEE</h2>
-          <div class="committee-grid">
-            <div class="committee-card">
-              Michael Baron, Charles Sturt University, Australia
-            </div>
+        <style>
+          .advisory-wrapper {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+          }
+
+          .advisory-panel {
+            flex: 1;
+            min-width: 300px;
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.12);
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+          }
+
+          .advisory-panel:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 32px 80px rgba(30, 58, 138, 0.2);
+          }
+
+          .advisory-panel-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 24px 28px;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .advisory-panel-header::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+          }
+
+          .advisory-panel-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+          }
+
+          .advisory-panel-header h2 {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+          }
+
+          .advisory-panel-header .count-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 6px;
+            position: relative;
+            z-index: 1;
+          }
+
+          .advisory-list-container {
+            height: 520px;
+            overflow-y: auto;
+            padding: 0;
+            scrollbar-width: thin;
+            scrollbar-color: #3b82f6 #f0f4ff;
+          }
+
+          .advisory-list-container::-webkit-scrollbar {
+            width: 5px;
+          }
+
+          .advisory-list-container::-webkit-scrollbar-track {
+            background: #f0f4ff;
+          }
+
+          .advisory-list-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #3b82f6, #1e3a8a);
+            border-radius: 10px;
+          }
+
+          .advisory-list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 24px;
+            border-bottom: 1px solid #f0f4ff;
+            transition: background 0.25s ease, transform 0.25s ease;
+            animation: listItemFadeIn 0.5s ease both;
+          }
+
+          .advisory-list-item:last-child {
+            border-bottom: none;
+          }
+
+          .advisory-list-item:hover {
+            background: linear-gradient(90deg, #f0f4ff, #ffffff);
+            transform: translateX(4px);
+          }
+
+          .advisory-list-item .item-index {
+            min-width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+          }
+
+          .advisory-list-item .item-text {
+            font-size: 14px;
+            color: #1e293b;
+            line-height: 1.5;
+          }
+
+          @keyframes listItemFadeIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+          }
+
+          .advisory-list-item:nth-child(1)  { animation-delay: 0.05s; }
+          .advisory-list-item:nth-child(2)  { animation-delay: 0.10s; }
+          .advisory-list-item:nth-child(3)  { animation-delay: 0.15s; }
+          .advisory-list-item:nth-child(4)  { animation-delay: 0.20s; }
+          .advisory-list-item:nth-child(5)  { animation-delay: 0.25s; }
+          .advisory-list-item:nth-child(6)  { animation-delay: 0.30s; }
+          .advisory-list-item:nth-child(7)  { animation-delay: 0.35s; }
+          .advisory-list-item:nth-child(8)  { animation-delay: 0.40s; }
+          .advisory-list-item:nth-child(9)  { animation-delay: 0.45s; }
+          .advisory-list-item:nth-child(10) { animation-delay: 0.50s; }
+
+          .advisory-panel .shimmer-bar {
+            height: 3px;
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6, #93c5fd, #3b82f6, #1e3a8a);
+            background-size: 300% 100%;
+            animation: shimmer 3s linear infinite;
+          }
+
+          @keyframes shimmer {
+            0%   { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+          }
+        </style>
+
+        <div class="fade-section">
+          <h2 class="section-title">ADVISORY COMMITTEES</h2>
+          <div class="advisory-wrapper">
+
+            <!-- INTERNATIONAL PANEL -->
+            <div class="advisory-panel">
+              <div class="shimmer-bar"></div>
+              <div class="advisory-panel-header">
+                <h2>🌐 International Advisory Committee</h2>
+                <span class="count-badge">56 Members</span>
+              </div>
+              <div class="advisory-list-container">
+                <div class="advisory-list-item"><span class="item-index">1</span><span class="item-text">Michael Baron, Charles Sturt University, Australia</span></div>
             <div class="committee-card">
               Lakshmanan Sethu Sankaranarayanan, TAM-Gen AI/ML solutions,
               Google, USA

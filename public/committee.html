@@ -647,6 +647,9 @@
   <div class="committee-grid">
 
     <div class="committee-card">
+      <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 16px auto;background:#e8eef8;">
+      <img src="assets/images/sunil-gupta.png" alt="Dr. Sunil Gupta" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
       <div class="member-name">Dr. Sunil Gupta</div>
       <div class="member-role">Dean R&D</div>
       <div class="member-org">Poornima University</div>
@@ -1023,185 +1026,12 @@
 </div>
 
 <!--INTERNATIONAL ADVISORY COMMITTEE -->
-        <style>
-          .advisory-wrapper {
-            display: flex;
-            gap: 32px;
-            align-items: flex-start;
-            flex-wrap: wrap;
-          }
-
-          .advisory-panel {
-            flex: 1;
-            min-width: 300px;
-            background: #ffffff;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.12);
-            position: relative;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-          }
-
-          .advisory-panel:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 32px 80px rgba(30, 58, 138, 0.2);
-          }
-
-          .advisory-panel-header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            padding: 24px 28px;
-            position: relative;
-            overflow: hidden;
-          }
-
-          .advisory-panel-header::before {
-            content: '';
-            position: absolute;
-            top: -40px;
-            right: -40px;
-            width: 140px;
-            height: 140px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 50%;
-          }
-
-          .advisory-panel-header::after {
-            content: '';
-            position: absolute;
-            bottom: -30px;
-            left: -20px;
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-          }
-
-          .advisory-panel-header h2 {
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            position: relative;
-            z-index: 1;
-            margin: 0;
-          }
-
-          .advisory-panel-header .count-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            color: #fff;
-            font-size: 12px;
-            padding: 3px 10px;
-            border-radius: 20px;
-            margin-top: 6px;
-            position: relative;
-            z-index: 1;
-          }
-
-          .advisory-list-container {
-            height: 520px;
-            overflow-y: auto;
-            padding: 0;
-            scrollbar-width: thin;
-            scrollbar-color: #3b82f6 #f0f4ff;
-          }
-
-          .advisory-list-container::-webkit-scrollbar {
-            width: 5px;
-          }
-
-          .advisory-list-container::-webkit-scrollbar-track {
-            background: #f0f4ff;
-          }
-
-          .advisory-list-container::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #3b82f6, #1e3a8a);
-            border-radius: 10px;
-          }
-
-          .advisory-list-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            padding: 14px 24px;
-            border-bottom: 1px solid #f0f4ff;
-            transition: background 0.25s ease, transform 0.25s ease;
-            animation: listItemFadeIn 0.5s ease both;
-          }
-
-          .advisory-list-item:last-child {
-            border-bottom: none;
-          }
-
-          .advisory-list-item:hover {
-            background: linear-gradient(90deg, #f0f4ff, #ffffff);
-            transform: translateX(4px);
-          }
-
-          .advisory-list-item .item-index {
-            min-width: 28px;
-            height: 28px;
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            color: #fff;
-            border-radius: 50%;
-            font-size: 11px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-top: 2px;
-          }
-
-          .advisory-list-item .item-text {
-            font-size: 14px;
-            color: #1e293b;
-            line-height: 1.5;
-          }
-
-          @keyframes listItemFadeIn {
-            from { opacity: 0; transform: translateX(-10px); }
-            to { opacity: 1; transform: translateX(0); }
-          }
-
-          .advisory-list-item:nth-child(1)  { animation-delay: 0.05s; }
-          .advisory-list-item:nth-child(2)  { animation-delay: 0.10s; }
-          .advisory-list-item:nth-child(3)  { animation-delay: 0.15s; }
-          .advisory-list-item:nth-child(4)  { animation-delay: 0.20s; }
-          .advisory-list-item:nth-child(5)  { animation-delay: 0.25s; }
-          .advisory-list-item:nth-child(6)  { animation-delay: 0.30s; }
-          .advisory-list-item:nth-child(7)  { animation-delay: 0.35s; }
-          .advisory-list-item:nth-child(8)  { animation-delay: 0.40s; }
-          .advisory-list-item:nth-child(9)  { animation-delay: 0.45s; }
-          .advisory-list-item:nth-child(10) { animation-delay: 0.50s; }
-
-          .advisory-panel .shimmer-bar {
-            height: 3px;
-            background: linear-gradient(90deg, #1e3a8a, #3b82f6, #93c5fd, #3b82f6, #1e3a8a);
-            background-size: 300% 100%;
-            animation: shimmer 3s linear infinite;
-          }
-
-          @keyframes shimmer {
-            0%   { background-position: 0% 50%; }
-            100% { background-position: 300% 50%; }
-          }
-        </style>
-
-        <div class="fade-section">
-          <h2 class="section-title">ADVISORY COMMITTEES</h2>
-          <div class="advisory-wrapper">
-
-            <!-- INTERNATIONAL PANEL -->
-            <div class="advisory-panel">
-              <div class="shimmer-bar"></div>
-              <div class="advisory-panel-header">
-                <h2>🌐 International Advisory Committee</h2>
-                <span class="count-badge">56 Members</span>
-              </div>
-              <div class="advisory-list-container">
-                <div class="advisory-list-item"><span class="item-index">1</span><span class="item-text">Michael Baron, Charles Sturt University, Australia</span></div>
+        <div class ="fade-section">
+          <h2 class="section-title">INTERNATIONAL ADVISORY COMMITTEE</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              Michael Baron, Charles Sturt University, Australia
+            </div>
             <div class="committee-card">
               Lakshmanan Sethu Sankaranarayanan, TAM-Gen AI/ML solutions,
               Google, USA
@@ -1408,364 +1238,307 @@
           <h2 class="section-title">NATIONAL ADVISORY COMMITTEE</h2>
           <div class="committee-grid">
             <div class="committee-card">
-              <div class="member-name">Dr. Jaivir Tyagi</div>
-              <div class="member-org">Ex- Director, NIH, Roorkee</div>
+              Dr. Jaivir Tyagi, Ex- Director, NIH, Roorkee
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Harish Kumar Khyani</div>
-              <div class="member-org">MBM Universtiy, Jodhpur</div>
+              Dr. Harish Kumar Khyani, MBM Universtiy, Jodhpur
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Sushindra Kumar Gupta</div>
-              <div class="member-org">Scientist-'C', National Institute of Hydrology, Roorkee</div>
+              Dr. Sushindra Kumar Gupta, Scientist-'C', National Institute of
+              Hydrology, Roorkee
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Sanjay Kumar Jain</div>
-              <div class="member-org">Visiting Professor, Centre of Excellence in Disaster Mitigation &amp; Management, IIT, Roorkee</div>
+              Dr. Sanjay Kumar Jain, Visiting Professor, Centre of Excellence in
+              Disaster Mitigation &amp; Management, IIT, Roorkee
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Prashant Kumar Srivastava</div>
-              <div class="member-org">Banaras Hindu University, Varanasi, Uttar Pradesh, India</div>
+              Dr. Prashant Kumar Srivastava, Banaras Hindu University, Varanasi,
+              Uttar Pradesh, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Yogesh Kumar Gupta</div>
-              <div class="member-org">B K Birla Institute of Engineering and Technology, Pilani</div>
+              Dr. Yogesh Kumar Gupta, B K Birla Institute of Engineering and
+              Technology, Pilani
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. PK Singh</div>
-              <div class="member-org">Associate Professor, Sardar Vallabhbhai Patel University of Agriculture &amp; Technology, Meerut</div>
+              Dr. PK Singh, Associate Professor, Sardar Vallabhbhai Patel
+              University of Agriculture &amp; Technology, Meerut
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr R Prasanna Kumar</div>
-              <div class="member-org">Amrita Vishwa Vidyapeetham Chennai, India</div>
+              Dr R Prasanna Kumar, Amrita Vishwa Vidyapeetham Chennai, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Vijay Mohan Shrimal</div>
-              <div class="member-org">Chandigarh University, India</div>
+              Dr. Vijay Mohan Shrimal, Chandigarh University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. P. Saracanan</div>
-              <div class="member-org">SRM Institute of Science and Technology, Chennai, Tamil Nadu, India</div>
+              Dr. P. Saracanan, SRM Institute of Science and Technology,
+              Chennai, Tamil Nadu, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Pritha Singha Roy</div>
-              <div class="member-org">Chitkara University, Punjab, India</div>
+              Pritha Singha Roy, Chitkara University, Punjab, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Sushil Kumar Singh</div>
-              <div class="member-org">Marwadi University, Gujarat, India</div>
+              Dr. Sushil Kumar Singh, Marwadi University, Gujarat, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mohit Tiwar</div>
-              <div class="member-org">Bharati Vidyapeeth's College of Engineering, Delhi, India</div>
+              Mohit Tiwar, Bharati Vidyapeeth's College of Engineering, Delhi,
+              India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Bishwa Ranjan Das</div>
-              <div class="member-org">Interscience Institute of Management and Technology, Bhubaneswar, India</div>
+              Dr. Bishwa Ranjan Das, Interscience Institute of Management and
+              Technology, Bhubaneswar, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Vijaya Kittu Manda</div>
-              <div class="member-org">PBMEIT, Visakhapatnam, India</div>
+              Dr. Vijaya Kittu Manda, PBMEIT, Visakhapatnam, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr Rashmi Soni</div>
-              <div class="member-org">Dayananda Sagar Academy of Technology &amp; Management, Bengaluru, India</div>
+              Dr Rashmi Soni, Dayananda Sagar Academy of Technology &amp;
+              Management, Bengaluru, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr Renjith V Ravi</div>
-              <div class="member-org">Rashtriya Raksha University, Gandhinagar, India</div>
+              Dr Renjith V Ravi, Rashtriya Raksha University, Gandhinagar, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Ms. Sunita Prareek</div>
-              <div class="member-org">Chief Librarian</div>
+              Ms. Sunita Prareek, Chief Librarian
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Ravish Gupta</div>
-              <div class="member-org">Dr. C V. Raman University, Kota, India</div>
+              Mr. Ravish Gupta, Dr. C V. Raman University, Kota, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Nithesh Naik Curiouz</div>
-              <div class="member-org">Tech Lab Private Limited, India</div>
+              Mr. Nithesh Naik Curiouz, Tech Lab Private Limited, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. S. Sujatha</div>
-              <div class="member-org">BIT Campus, Anna University, Tiruchirappalli, India</div>
+              Ms. Sunita Prareek, Chief Librarian
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Shahid Aziz</div>
-              <div class="member-org">PES University, Bengaluru, India</div>
+              Dr. S. Sujatha BIT Campus, Anna University, Tiruchirappalli, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Achala Deshmukh</div>
-              <div class="member-org">Sinhgad College of Engineering, Pune, India</div>
+              Mr. Shahid Aziz, PES University, Bengaluru, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. R. Vijay</div>
-              <div class="member-org">Chaitanya Bharathi Institute of Technology, Hyderabad, India</div>
+              Dr. Achala Deshmukh Sinhgad College of Engineering, Pune, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Sucheta Kakde</div>
-              <div class="member-org">Mumbai University, India</div>
+              Dr. R. Vijay, Chaitanya Bharathi Institute of Technology,
+              Hyderabad, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Suhaib Ahmed</div>
-              <div class="member-org">Model Institute of Engineering and Technology, Jammu, India</div>
+              Dr. Sucheta Kakde, Mumbai University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Sanjeevkumar Angadi</div>
-              <div class="member-org">PCET'S &amp; NMVPM's, Pune, India</div>
+              Dr. Suhaib Ahmed, Model Institute of Engineering and Technology,
+              Jammu, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. R. Manikandan</div>
-              <div class="member-org">SASTRA Deemed University, Thanjavur, India</div>
+              Dr. Sanjeevkumar Angadi, PCET'S &amp; NMVPM's, Pune, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Susmita Das</div>
-              <div class="member-org">Narula Institute of Technology, West Bengal, India</div>
+              Dr. R. Manikandan, SASTRA Deemed University, Thanjavur, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. C. KAVITHA</div>
-              <div class="member-org">Dwaraka Doss Goverdhan Doss Vaishnav College, Chennai, India</div>
+              Dr. Susmita Das, Narula Institute of Technology, West Bengal,
+              India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Rajat Kumar Dwibedi</div>
-              <div class="member-org">Aarupadai Veedu Institute of Technology, Salem, India</div>
+              Dr. C. KAVITHA, Dwaraka Doss Goverdhan Doss Vaishnav College,
+              Chennai, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Chandragiri Radhacharan</div>
-              <div class="member-org">JNTUH University College of Engineering Jagtial, Telangana, India</div>
+              Mr. Rajat Kumar Dwibedi, Aarupadai Veedu Institute of Technology,
+              Salem, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Ashok Kumar</div>
-              <div class="member-org">R R.M.D. Engineering College, Chennai, Tamil Nadu, India</div>
+              Mr. Chandragiri Radhacharan, JNTUH University College of
+              Engineering Jagtial, Telangana, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Madhusudhana Reddy Barusum</div>
-              <div class="member-org">Ravindra College of Engineering for Women, Andhra Pradesh, India</div>
+              Dr. Ashok Kumar, R R.M.D. Engineering College, Chennai, Tamil
+              Nadu, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Balasubramanian T</div>
-              <div class="member-org">St. Josepha College of Engineering, India</div>
+              Dr. Madhusudhana Reddy Barusum, Ravindra College of Engineering
+              for Women, Andhra Pradesh, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Dinesh Kumar Sain</div>
-              <div class="member-org">Bikaner Technical University, India</div>
+              Mr. Balasubramanian T, St. Josepha College of Engineering, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mrs. M Hima Jyothi</div>
-              <div class="member-org">Diksha Technologies Pvt Ltd, India</div>
+              Mr. Dinesh Kumar Sain, Bikaner Technical University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Ms. Charu Jain</div>
-              <div class="member-org">Engineering College Bikaner, India</div>
+              Mrs. M Hima Jyothi, Diksha Technologies Pvt Ltd, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Smita Pareek</div>
-              <div class="member-org">BKBIET, Pilani, India</div>
+              Ms. Charu Jain, Engineering College Bikaner, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Ms. Priya L</div>
-              <div class="member-org">Rajalakshmi Engineering College, India</div>
+              Dr. Smita Pareek, BKBIET, Pilani, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Nitesh Kumar Dixit</div>
-              <div class="member-org">Bhartiya Institute of Engineering &amp; Technology, India</div>
+              Ms. Priya L, Rajalakshmi Engineering College, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Lata Gidwani</div>
-              <div class="member-org">Rajasthan Technical University, Kota, India</div>
+              Dr. Nitesh Kumar Dixit, Bhartiya Institute of Engineering &amp;
+              Technology, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Arvind Singh Choudhary</div>
-              <div class="member-org">Govt. Engineering College, Bharatpur, India</div>
+              Dr. Lata Gidwani, Rajasthan Technical University, Kota, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. A. Mallikarjuna Prasad</div>
-              <div class="member-org">JNTU, India</div>
+              Dr. Arvind Singh Choudhary, Govt. Engineering College, Bharatpur,
+              India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. K. Mohana Lakshmi</div>
-              <div class="member-org">JNTUH/CMR Technical Campus, India</div>
+              Dr. A. Mallikarjuna Prasad, JNTU, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Dileep Kumar Agarwal</div>
-              <div class="member-org">Sobhasaria Group of Institutions, India</div>
+              Dr. K. Mohana Lakshmi, JNTUH/CMR Technical Campus, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. R. K. SARAN</div>
-              <div class="member-org">Government Agriculture College, India</div>
+              Mr. Dileep Kumar Agarwal, Sobhasaria Group of Institutions, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Javed</div>
-              <div class="member-org">Indian Institute of Information Technology, India</div>
+              Dr. R. K. SARAN, Government Agriculture College, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. G V Suresh Lakkireddy</div>
-              <div class="member-org">Bali Reddy College of Engineering, India</div>
+              Mr. Javed, Indian Institute of Information Technology, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. D. Sudha</div>
-              <div class="member-org">KPR Institute of Engineering and Technology, India</div>
+              Dr. G V Suresh Lakkireddy, Bali Reddy College of Engineering,
+              India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Surender Singh Tanwar</div>
-              <div class="member-org">Bikaner Technical University, India</div>
+              Dr. D. Sudha, KPR Institute of Engineering and Technology, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Ms. Shruthi U</div>
-              <div class="member-org">RNS Institute of Technology, India</div>
+              Mr. Surender Singh Tanwar, Bikaner Technical University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Saurabh Tege</div>
-              <div class="member-org">Geetanjali Institute of Technical Studies, India</div>
+              Ms. Shruthi U, RNS Institute of Technology, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Sai Bhavya Prabu</div>
-              <div class="member-org">Neev Academy, India</div>
+              Dr. Saurabh Tege, Geetanjali Institute of Technical Studies, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Himanshu Verma</div>
-              <div class="member-org">B K Birla Institute of Engineering &amp; Technology, India</div>
+              Mr. Sai Bhavya Prabu, Neev Academy, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. M. Moorthi</div>
-              <div class="member-org">Saveetha Engineering College, India</div>
+              Mr. Himanshu Verma, B K Birla Institute of Engineering &amp;
+              Technology, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. P. Raja</div>
-              <div class="member-org">Sri Manakula Vinayagar Engineering College, India</div>
+              Dr. M. Moorthi, Saveetha Engineering College, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. K NARESH BABU</div>
-              <div class="member-org">Geethanjali College of Engineering and Technology, India</div>
+              Dr. P. Raja, Sri Manakula Vinayagar Engineering College, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Nimish Kumar</div>
-              <div class="member-org">BK Birla Institute of Engineering and Technology, India</div>
+              Mr. K NARESH BABU, Geethanjali College of Engineering and
+              Technology, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Sankar Babu Potluri</div>
-              <div class="member-org">SVR Engineering College, India</div>
+              Dr. Nimish Kumar, BK Birla Institute of Engineering and
+              Technology, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Abhishek Gehlot</div>
-              <div class="member-org">Jaipur National University, India</div>
+              Dr. Sankar Babu Potluri, SVR Engineering College, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Prof. R C Chhipa</div>
-              <div class="member-org">Suresh Gyan Vihar University, India</div>
+              Dr. Abhishek Gehlot, Jaipur National University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Saurabh Singh</div>
-              <div class="member-org">Suresh Gyan Vihar University, India</div>
+              Prof. R C Chhipa, Suresh Gyan Vihar University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Ashok Kumar R</div>
-              <div class="member-org">Anna University / R.M.D. Engineering College, India</div>
+              Dr. Saurabh Singh, Suresh Gyan Vihar University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Rahul Agrawal</div>
-              <div class="member-org">MIT Aurangabad, India</div>
+              Dr. Ashok Kumar R, Anna University / R.M.D. Engineering College,
+              India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr P Nageswara Rao</div>
-              <div class="member-org">VEMU Institute of Technology, Andhra Pradesh, India</div>
+              Dr. Rahul Agrawal, MIT Aurangabad, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. K. Chandra Rekha</div>
-              <div class="member-org">JNTUA, India</div>
+              Dr P Nageswara Rao, VEMU Institute of Technology, Andhra Pradesh,
+              India
             </div>
+            <div class="committee-card">Dr. K. Chandra Rekha, JNTUA, India</div>
             <div class="committee-card">
-              <div class="member-name">Dr. B.Visalakshi</div>
-              <div class="member-org">E.R.K Arts and Science College, Dharmapuri, India</div>
+              Dr. B.Visalakshi, E.R.K Arts and Science College, Dharmapuri,
+              India
             </div>
             <div class="committee-card">
-              <div class="member-name">Ms. SREELATHA P K</div>
-              <div class="member-org">Presidency University, Bangalore, India</div>
+              Ms. SREELATHA P K, Presidency University, Bangalore, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Anil Singh Yadav</div>
-              <div class="member-org">Bakhtiyarpur College of Engineering, Patna, India</div>
+              Dr. Anil Singh Yadav, Bakhtiyarpur College of Engineering, Patna,
+              India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Ravi Kumar Dwivedi</div>
-              <div class="member-org">MANIT, Bhopal, India</div>
+              Dr. Ravi Kumar Dwivedi, MANIT, Bhopal, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. P. Saravanan</div>
-              <div class="member-org">SRM Institute of Science and Technology, India</div>
+              Dr. P. Saravanan, SRM Institute of Science and Technology, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Irum Alvi</div>
-              <div class="member-org">Rajasthan Technical University, Kota, India</div>
+              Dr. Irum Alvi, Rajasthan Technical University, Kota, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Rajan Kumar</div>
-              <div class="member-org">IES College of Technology, Bhopal, India</div>
+              Dr. Rajan Kumar, IES College of Technology, Bhopal, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Ravish Gupta</div>
-              <div class="member-org">Dr. C V. Raman University, India</div>
+              Mr. Ravish Gupta, Dr. C V. Raman University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. M. Nagarajan</div>
-              <div class="member-org">Industrial and Management consultant, India</div>
+              Dr. M. Nagarajan, Industrial and Management consultant, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Nithesh Naik</div>
-              <div class="member-org">Curiouz TechLab Private Limited, India</div>
+              Mr. Nithesh Naik, Curiouz TechLab Private Limited, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Sushindra Kumar Gupta</div>
-              <div class="member-org">National Institute of Hydrology, Roorkee, India</div>
+              Dr. Sushindra Kumar Gupta, National Institute of Hydrology,
+              Roorkee, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Princy Randhawa</div>
-              <div class="member-org">Manipal University, Jaipur, India</div>
+              Dr. Princy Randhawa, Manipal University, Jaipur, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr Jibin Francis</div>
-              <div class="member-org">AMET University, Tamilnadu, India</div>
+              Dr Jibin Francis, AMET University, Tamilnadu, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Mr. Sarvesh Kumar</div>
-              <div class="member-org">The ICFAI University, Jaipur, India</div>
+              Mr. Sarvesh Kumar, The ICFAI University, Jaipur, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Manorama Patnaik</div>
-              <div class="member-org">Amity University, Jharkhand, Ranchi, India</div>
+              Dr. Manorama Patnaik, Amity University, Jharkhand, Ranchi, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Rhytheema Dulloo</div>
-              <div class="member-org">Hindustan Institute of Technology and Science, Chennai, India</div>
+              Dr. Rhytheema Dulloo, Hindustan Institute of Technology and
+              Science, Chennai, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Shazia Shaikh</div>
-              <div class="member-org">MGM University's</div>
+              Dr. Shazia Shaikh, MGM University's
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. G. Y. Pathrikar</div>
-              <div class="member-org">College of Computer Science and Information Technology, India</div>
+              Dr. G. Y. Pathrikar, College of Computer Science and Information
+              Technology, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Namrata Nagpal</div>
-              <div class="member-org">Amity University, India</div>
+              Dr. Namrata Nagpal, Amity University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. P Sukumar</div>
-              <div class="member-org">Nandha Engineering College Autonomous, Affiliated to Anna University, Chennai, India</div>
+              Dr. P Sukumar, Nandha Engineering College Autonomous, Affiliated
+              to Anna University, Chennai, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Ms. Preeti Sharma</div>
-              <div class="member-org">DIT University, India</div>
+              Ms. Preeti Sharma, DIT University, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. Balambigai. S</div>
-              <div class="member-org">Karpagam College of Engineering, India</div>
+              Dr. Balambigai. S, Karpagam College of Engineering, India
             </div>
             <div class="committee-card">
-              <div class="member-name">Dr. S. Arul Antran Vijay</div>
-              <div class="member-org">Karpagam College of Engineering, Coimbatore, Tamilnadu, India</div>
+              Dr. S. Arul Antran Vijay, Karpagam College of Engineering,
+              Coimbatore, Tamilnadu, India
             </div>
           </div>
         </div>

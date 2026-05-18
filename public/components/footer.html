@@ -1,373 +1,376 @@
-<style>
-  .footer {
-    background: linear-gradient(135deg, #0d1b5e, #142a86);
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    opacity: 0;
-    transform: translateY(40px);
-    transition:
-      opacity 0.8s ease,
-      transform 0.8s ease;
-  }
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Poornima Conference</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  .footer.show-footer {
-    opacity: 1;
-    transform: translateY(0);
-  }
+      body {
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          sans-serif;
+        background: #f8fafc;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
 
-  .footer-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 20px 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-  }
+      /* demo content to show footer placement naturally */
+      .demo-content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 1.5rem;
+        text-align: center;
+        background: linear-gradient(145deg, #f1f5f9 0%, #eef2ff 100%);
+      }
+      .demo-content h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #0f172a;
+        letter-spacing: -0.02em;
+      }
+      .demo-content p {
+        color: #334155;
+        margin-top: 0.75rem;
+        max-width: 500px;
+      }
 
-  .footer-col h3 {
-    margin-bottom: 18px;
-    font-size: 18px;
-    font-weight: 600;
-  }
+      /* ---------- FOOTER STYLES (exactly as per image) ---------- */
+      .footer {
+        background: #0b1120; /* deep navy/slate, elegant for conferences */
+        color: #e2e8f0;
+        width: 100%;
+        border-top: 1px solid rgba(71, 85, 105, 0.4);
+        font-weight: 400;
+      }
 
-  .footer-col p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    color: #e2e8f0;
-  }
+      .footer-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 3rem 2rem 1.8rem 2rem;
+      }
 
-  .footer-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+      /* main grid: brand column | navigation | website | organizers */
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1fr;
+        gap: 2rem 2rem;
+        margin-bottom: 2.5rem;
+      }
 
-  .footer-col ul li {
-    margin-bottom: 10px;
-  }
+      /* brand & microsoft CMT block */
+      .brand-name {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, #ffffff 0%, #a5f3fc 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 1.1rem;
+        display: inline-block;
+      }
 
-  .footer-col ul li a {
-    text-decoration: none;
-    color: #e2e8f0;
-    font-size: 14px;
-    transition: 0.3s;
-  }
+      .brand-description {
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: #cbd5e6;
+        margin-top: 0.5rem;
+      }
 
-  .footer-col ul li a:hover {
-    color: #ffffff;
-    padding-left: 5px;
-  }
+      .brand-description p {
+        margin-bottom: 0.75rem;
+      }
 
-  .acknowledgment {
-  max-width: 600px;
-  margin: 0 auto ;
-  padding: 5px 20px;
-  text-align: center;
-}
+      .brand-description .cmt-highlight {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 0.85rem;
+        color: #b9c8ff;
+        border-left: 2px solid #3b82f6;
+        padding-left: 0.75rem;
+        margin-top: 0.75rem;
+      }
 
-/* Match heading style */
-.acknowledgment h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
+      /* navigation columns general */
+      .footer-nav h3,
+      .footer-website h3,
+      .footer-organizers h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: #f1f5f9;
+        margin-bottom: 1.25rem;
+        position: relative;
+        display: inline-block;
+      }
 
-/* Match paragraph style EXACTLY */
-.acknowledgment p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #e2e8f0;
-  margin-bottom: 5px;
-}
+      .footer-nav h3:after,
+      .footer-website h3:after,
+      .footer-organizers h3:after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 32px;
+        height: 2px;
+        background: #3b82f6;
+        border-radius: 4px;
+      }
 
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 20px;
-  }
+      .footer-nav ul,
+      .footer-website ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
 
-  .footer-bottom-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
-    color: #cbd5e1;
-  }
+      .footer-nav li a,
+      .footer-website li a {
+        text-decoration: none;
+        color: #cbd5e6;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        display: inline-block;
+        position: relative;
+      }
 
-  .developers p {
-    margin: 2px 0;
-  }
+      .footer-nav li a:hover,
+      .footer-website li a:hover {
+        color: white;
+        transform: translateX(4px);
+      }
 
-  @media (max-width: 768px) {
-    .footer-bottom-container {
-      flex-direction: column;
-      text-align: center;
-      gap: 10px;
-    }
-    
-  }
+      /* register button */
+      .register-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #ffffff;
+        color: #0f172a;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.7rem 1.6rem;
+        border-radius: 40px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        margin-top: 0.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
 
-  /* ================= POPUP CSS ================= */
+      .register-btn:hover {
+        background: #e2e8f0;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        border-color: #94a3b8;
+        color: #020617;
+      }
 
-  #conferencePopup {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-    display: none;
-    z-index: 9999;
-    overflow-y: auto; /* scroll on mobile */
-    padding: 20px;
-  }
+      .register-btn:active {
+        transform: translateY(1px);
+      }
 
-  #conferencePopup.show {
-    display: flex;
-    align-items: flex-start; /* important */
-    justify-content: center;
-  }
+      /* bottom bar (copyright + dev credit) */
+      .footer-bottom {
+        border-top: 1px solid rgba(71, 85, 105, 0.5);
+        padding-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.8rem;
+        color: #94a3b8;
+      }
 
-  /* Modal box */
-  #conferencePopup .popup-box {
-    background: #ffffff;
-    width: 100%;
-    max-width: 800px; /* smaller on desktop */
-    border-radius: 18px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-    margin-top: 40px;
-    margin-bottom: 40px;
-    overflow: hidden;
-  }
+      .copyright {
+        letter-spacing: 0.2px;
+      }
 
-  /* Desktop center perfectly */
-  @media (min-width: 768px) {
-    #conferencePopup.show {
-      align-items: center; /* vertical center only on desktop */
-    }
+      .developer-credit {
+        font-weight: 400;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 0.3rem 0.9rem;
+        border-radius: 40px;
+        backdrop-filter: blur(2px);
+      }
 
-    #conferencePopup .popup-box {
-      margin: 0;
-    }
-  }
-</style>
+      .developer-credit a {
+        text-decoration: none;
+        color: #a5b4fc;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
 
-<footer class="footer">
+      .developer-credit a:hover {
+        color: white;
+        text-decoration: underline;
+      }
 
-  <div class="footer-container">
-    <!-- 4 columns -->
+      /* extra microsoft subtle note (optional but clean) */
+      .msft-note {
+        font-size: 0.7rem;
+        color: #7e8aa8;
+        margin-top: 0.5rem;
+      }
 
-<div class="footer-col">
-      <img
-        src="/PU_Logo.png"
-        alt="PU Logo"
-        style="max-width: 180px; width: 100%; height: auto; display: block;"
-      >
-    </div>
+      /* responsiveness: tablet & mobile */
+      @media (max-width: 900px) {
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 1.8rem;
+        }
+        .footer-container {
+          padding: 2.5rem 1.5rem 1.5rem;
+        }
+        .brand-name {
+          font-size: 1.8rem;
+        }
+      }
 
-<div class="footer-col">
-      <h3>ICISET 2026</h3>
-      <p>1st International Conference on Intelligent Systems and Emerging Technologies</p>
-      <p>November 27-28, 2026</p>
-    <p>
-      The Microsoft CMT service was used for managing the peer-reviewing process
-      for this conference. This service was provided for free by Microsoft and
-      they bore all expenses, including costs for Azure cloud services as well
-      as for software development and support.
-    </p>
-    </div>
-    
-    <div class="footer-col">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="call-for-papers.html">Call for Papers</a></li>
-        <li><a href="submission.html">Submission</a></li>
-        <li><a href="committee.html">Committee</a></li>
-      </ul>
-    </div>
+      @media (max-width: 580px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          text-align: left;
+        }
+        .footer-nav h3:after,
+        .footer-website h3:after,
+        .footer-organizers h3:after {
+          left: 0;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+        }
+        .register-btn {
+          justify-content: center;
+        }
+        .brand-description .cmt-highlight {
+          border-left-width: 2px;
+        }
+      }
 
-    <div class="footer-col">
-      <h3>Information</h3>
-      <ul>
-        <li><a href="partners.html">Publications</a></li>
-        <li><a href="speakers.html">Speakers</a></li>
-        <li><a href="sponsorship.html">Sponsorship</a></li>
-        <li><a href="contact.html">Venue</a></li>
-      </ul>
-    </div>
+      /* additional hover & focus accessibility */
+      a:focus-visible,
+      .register-btn:focus-visible {
+        outline: 2px solid #60a5fa;
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
 
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <p>📧 iciset2026@poornima.edu.in</p>
-      <p>📧 saurabh.shandilya@poornima.edu.in</p>
-      <p>📞 +91-9887587811</p>
-      <p>📍 Jaipur, Rajasthan, India</p>
-    </div>
-  </div>
-
-  <!-- ✅ correct section (NOT footer-col) -->
-  
-
-  <div class="footer-bottom">
-    <div class="footer-bottom-container">
-      <p>© 2026 Poornima University. All rights reserved.</p>
-      <div class="developers">
-        <p>Developed by -</p>
-        <p>Mr. Sagar Kumar (Assistant Professor), Poornima University</p>
-        <p>Bhumika Aggarwal (Student), Poornima University</p>
-        <p>Bhavya Agrawal (Student), Poornima University</p>
-      </div>
-    </div>
-  </div>
-
-</footer>
-
-<!-- ================= POPUP HTML ================= -->
-
-<div id="conferencePopup">
-  <div
-    class="bg-white w-[950px] max-w-[95%] rounded-2xl overflow-hidden shadow-2xl"
-  >
-    <!-- Header -->
-    <div
-      class="bg-blue-800 text-white px-6 py-5 flex justify-between items-center"
-    >
+      /* small design: smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- demo content to simulate real website context (not part of footer) -->
+    <main class="demo-content">
       <div>
-        <h2 class="text-xl font-semibold">Submit Your Paper</h2>
-        <p class="text-sm text-blue-200">
-          Join ICISET 2026 – Share Your Research
+        <h2>International Conference 2026</h2>
+        <p>
+          Innovation, Research & Future Technologies | Submit your paper now
         </p>
       </div>
+    </main>
 
-      <button id="closePopup" class="text-2xl font-bold hover:text-gray-300">
-        ×
-      </button>
-    </div>
+    <!-- FOOTER SECTION - exactly as described in the image -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- main 4 column layout (brand, navigation, website, organizers) -->
+        <div class="footer-grid">
+          <!-- Left column: POORNIMA brand + Microsoft CMT service description -->
+          <div class="footer-brand">
+            <div class="brand-name">
+              <img
+                src="/PU_Logo.png"
+                alt="PU Logo"
+                style="
+                  max-width: 180px;
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                "
+              />
+            </div>
+            <div class="brand-description">
+              <p>
+                The Microsoft CMT service was used for managing the
+                peer-reviewing process for this conference. Provided for free by
+                Microsoft — covering Azure cloud services, software development,
+                and support.
+              </p>
+              <!-- subtle microsoft nuance just for style -->
+              <span class="cmt-highlight"
+                >✓ Conference Management Toolkit (CMT) by Microsoft</span
+              >
+            </div>
+          </div>
 
-    <!-- Body -->
-    <div class="p-4 md:p-8 bg-gray-50">
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Important Dates -->
-        <div class="bg-white rounded-lg p-4 md:p-6 shadow-sm border">
-          <h3 class="font-semibold text-lg mb-4">Important Dates</h3>
+          <!-- Navigation column: exactly matches "About, Committees, Call for Paper, Speakers, Partners, Contact" -->
+          <div class="footer-nav">
+            <h3>NAVIGATION</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Committees</a></li>
+              <li><a href="#">Call for Paper</a></li>
+              <li><a href="#">Speakers</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
 
-          <ul class="text-sm text-gray-700 space-y-2">
-            <li class="flex justify-between">
-              <span>Start Paper Submission:</span>
-              <span class="font-medium">June 01, 2026</span>
-            </li>
+          <!-- WEBSITE column: Sitemap, Report, Developer (exact match) -->
+          <div class="footer-website">
+            <h3>WEBSITE</h3>
+            <ul>
+              <li><a href="#">Sitemap</a></li>
+              <li><a href="#">Report</a></li>
+              <li><a href="#">Developer</a></li>
+            </ul>
+          </div>
 
-            <li class="flex justify-between">
-              <span>Full Paper Submission up to:</span>
-              <span class="font-medium">September 30, 2026</span>
-            </li>
-
-            <li class="flex justify-between">
-              <span>Notification of Acceptance:</span>
-              <span class="font-medium">October 15, 2026</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Early Bird Registration:</span>
-              <span class="font-medium">October 20, 2026</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Camera Ready:</span>
-              <span class="font-medium">November 10, 2026</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Late Registration:</span>
-              <span class="font-medium">November 15, 2026</span>
-            </li>
-            
-            <li class="flex justify-between">
-              <span>Conference Dates:</span>
-              <span class="font-medium">November 27–28, 2026</span>
-            </li>
-          </ul>
+          <!-- ORGANIZERS column: Register Now button with arrow -->
+          <div class="footer-organizers">
+            <h3>ORGANIZERS</h3>
+            <a href="#" class="register-btn"
+              >Register Now <span aria-hidden="true">→</span></a
+            >
+          </div>
         </div>
 
-        <!-- Submission Process -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
-          <h3 class="font-semibold text-lg mb-4">Submission Process</h3>
-
-          <ol class="text-sm text-gray-700 space-y-3">
-            <li class="flex items-start gap-3">
-              <span
-                class="bg-blue-700 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs"
-                >1</span
-              >
-              Prepare research paper (6–8 pages)
-            </li>
-
-            <li class="flex items-start gap-3">
-              <span
-                class="bg-blue-700 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs"
-                >2</span
-              >
-              Follow the conference format
-            </li>
-
-            <li class="flex items-start gap-3">
-              <span
-                class="bg-blue-700 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs"
-                >3</span
-              >
-              Submit via online portal
-            </li>
-
-            <li class="flex items-start gap-3">
-              <span
-                class="bg-blue-700 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs"
-                >4</span
-              >
-              Await review notification
-            </li>
-          </ol>
+        <!-- bottom copyright & developer credit row: fully as per image -->
+        <div class="footer-bottom">
+          <div class="copyright">
+            © 2026 Poornima University. All rights reserved.
+          </div>
+          <div class="developer-credit">
+            Developed by <a href="#">@relaxkartikey</a> and
+            <a href="#">@imron88</a>
+          </div>
         </div>
       </div>
-
-      <!-- Note -->
-      <div
-        class="mt-6 bg-blue-50 border border-blue-200 text-blue-800 text-sm p-4 rounded-lg"
-      >
-        <strong>Note:</strong> All papers will be peer reviewed. Accepted papers
-        will be recommended for publication in Scopus Indexed Conference Proceedings.
-      </div>
-
-      <!-- Buttons -->
-      <div class="flex flex-col md:flex-row gap-4 mt-8">
-        <a
-          href="submission.html"
-          class="flex-1 bg-blue-800 text-white text-center py-2.5 rounded-lg font-semibold text-sm md:text-base hover:bg-blue-900 transition"
-        >
-          Submit Paper Now →
-        </a>
-
-        <a
-          href="call-for-papers.html"
-          class="flex-1 bg-blue-800 text-white text-center py-2.5 rounded-lg font-semibold text-sm md:text-base hover:bg-blue-900 transition"
-        >
-          View Guidelines →
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  window.addEventListener("load", function () {
-    setTimeout(function () {
-      const popup = document.getElementById("conferencePopup");
-      if (popup) {
-        popup.classList.add("show");
-      }
-    }, 600);
-  });
-
-  document.addEventListener("click", function (e) {
-    if (e.target.id === "closePopup" || e.target.id === "closePopupBtn") {
-      document.getElementById("conferencePopup").classList.remove("show");
-    }
-  });
-</script>
+    </footer>
+  </body>
+</html>

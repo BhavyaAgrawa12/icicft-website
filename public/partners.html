@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,11 +11,18 @@
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
   <style>
-    body { animation: fadePage 0.8s ease-in-out; }
+    body {
+      animation: fadePage 0.8s ease-in-out;
+    }
 
     @keyframes fadePage {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .fade-section {
@@ -32,246 +40,248 @@
       background: white;
       padding: 50px;
       border-radius: 20px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.05);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
       transition: 0.4s ease;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 45px rgba(30,58,138,0.12);
+      box-shadow: 0 20px 45px rgba(30, 58, 138, 0.12);
     }
   </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800">
 
-<!-- ================= HEADER ================= -->
-<div id="header-placeholder"></div>
+  <!-- ================= HEADER ================= -->
+  <div id="header-placeholder"></div>
 
-<!-- ================= HERO WITH SLIDER ================= -->
- <section class="pt-20 pb-8 bg-gray-100 fade-section">
-      <div class="max-w-5xl mx-auto px-6 relative">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-          <div class="slider relative w-full h-72 md:h-[450px]">
-            <div
-              class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
-            >
-              <img
-                src="/assets/images/building.avif" alt="Poornima University campus building"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="/assets/images/poornima 3.webp" alt="Poornima University campus"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <div
-              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
-            >
-              <img
-                src="/assets/images/footercover.webp" alt="ICSCIS conference venue"
-                class="w-full h-full object-cover"
-              />
-            </div>
+  <!-- ================= HERO WITH SLIDER ================= -->
+  <section class="pt-20 pb-8 bg-gray-100 fade-section">
+    <div class="max-w-5xl mx-auto px-6 relative">
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+        <div class="slider relative w-full h-72 md:h-[450px]">
+          <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+            <img src="/assets/images/building.avif" alt="Poornima University campus building"
+              class="w-full h-full object-cover" />
           </div>
-          <div class="absolute inset-0 bg-black/10"></div>
+
+          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <img src="/assets/images/poornima 3.webp" alt="Poornima University campus"
+              class="w-full h-full object-cover" />
+          </div>
+
+          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <img src="/assets/images/footercover.webp" alt="ICSCIS conference venue"
+              class="w-full h-full object-cover" />
+          </div>
         </div>
-
-        <div
-          class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-5 text-center"
-        >
-          <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
-            Partners & Publication 
-          </h2>
-          <p class="text-gray-500">
-            Conference proceedings and journal publication opportunities
-          </p>
-          <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
-        </div>
-      </div>
-    </section>
-
-<!-- ================= INDUSTRY PARTNERS ================= -->
-<section class="py-20 bg-gray-50 fade-section">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold text-primary mb-12">Industry Partners</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-
-      <div class="card flex justify-center items-center">
-        <img src="/assets/images/sincgrid.jpg" alt="Sincgrid logo" class="h-28 object-contain">
+        <div class="absolute inset-0 bg-black/10"></div>
       </div>
 
-      <div class="card flex justify-center items-center">
-        <img src="/assets/images/kt.png" alt="KT logo" class="h-28 object-contain">
-      </div>
-
-      <div class="card flex justify-center items-center">
-        <img src="/assets/images/ambition_tech.png" alt="Ambition Tech logo" class="h-28 object-contain">
-      </div>
-
-      <div class="card flex justify-center items-center">
-        <img src="/assets/images/robofi.png" alt="Robofi logo" class="h-28 object-contain">
-      </div>
-
-      <div class="card flex justify-center items-center">
-        <img src="/assets/images/club_first.png" alt="Club First logo" class="h-28 object-contain">
-      </div>
-
-      <div class="card flex justify-center items-center">
-        <img src="/assets/images/zeetro.jpg" alt="Zeetro logo" class="h-28 object-contain">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Conference Partners -->
-<section class="py-24 bg-white fade-section">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-primary mb-16">
-          Conference Partners
+      <div class="relative mt-8 w-fit mx-auto bg-white rounded-2xl shadow-lg px-12 py-5 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold text-primary mb-2">
+          Partners & Publication
         </h2>
+        <p class="text-gray-500">
+          Conference proceedings and journal publication opportunities
+        </p>
+        <div class="w-28 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+      </div>
+    </div>
+  </section>
 
-        <div class="grid md:grid-cols-2 gap-10">
-          <div class="card flex justify-center items-center">
-            <img
-              src="assets/images/organising-logo.png" alt="Poornima University logo"
-              class="max-h-32 w-auto object-contain"
-            />
-          </div>
 
-          <div class="card flex justify-center items-center">
-            <img
-              src="/assets/images/rcat_logo.jpeg" alt="R-CAT logo"
-              class="max-h-32 w-auto object-contain"
-            />
-          </div>
+  <!-- ================= Knowledge PARTNER ================= -->
+
+
+  <section class="py-24 bg-gray-50 fade-section">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+      <h2 class="text-3xl font-bold text-primary mb-16">
+        Knowledge Partner
+      </h2>
+
+      <!-- Center wrapper -->
+      <div class="flex justify-center">
+
+        <!-- Card -->
+        <div class="card flex items-center justify-center h-40 w-full max-w-md">
+          <img src="assets/images/CESS_Logo-01.svg" alt="CESS" class="max-h-32 w-auto object-contain" />
         </div>
       </div>
-    </section>
 
-<!-- ================= PUBLICATION PARTNER ================= -->
+    </div>
+  </section>
+  <!-- ================= INDUSTRY PARTNERS ================= -->
+  <section class="py-20 bg-gray-50 fade-section">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-primary mb-12">Industry Partners</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <div class="card flex justify-center items-center">
+          <img src="/assets/images/sincgrid.jpg" alt="Sincgrid logo" class="h-28 object-contain">
+        </div>
+
+        <div class="card flex justify-center items-center">
+          <img src="/assets/images/kt.png" alt="KT logo" class="h-28 object-contain">
+        </div>
+
+        <div class="card flex justify-center items-center">
+          <img src="/assets/images/ambition_tech.png" alt="Ambition Tech logo" class="h-28 object-contain">
+        </div>
+
+        <div class="card flex justify-center items-center">
+          <img src="/assets/images/robofi.png" alt="Robofi logo" class="h-28 object-contain">
+        </div>
+
+        <div class="card flex justify-center items-center">
+          <img src="/assets/images/club_first.png" alt="Club First logo" class="h-28 object-contain">
+        </div>
+
+        <div class="card flex justify-center items-center">
+          <img src="/assets/images/zeetro.jpg" alt="Zeetro logo" class="h-28 object-contain">
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
-<section class="py-24 bg-gray-50 fade-section">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    
-    <h2 class="text-3xl font-bold text-primary mb-16">
-      Publication Partners
-    </h2>
 
-    <!-- Center wrapper -->
-    <div class="flex justify-center">
-      
-      <!-- Card -->
-      <div class="card flex items-center justify-center h-40 w-full max-w-md">
-        <img
-          src="assets/images/scopus.png"
-          alt="Scopus"
-          class="max-h-32 w-auto object-contain"
-        />
+  <!-- Conference Partners -->
+  <section class="py-24 bg-white fade-section">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-primary mb-16">
+        Conference Partners
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="card flex justify-center items-center">
+          <img src="assets/images/organising-logo.png" alt="Poornima University logo"
+            class="max-h-32 w-auto object-contain" />
+        </div>
+
+        <div class="card flex justify-center items-center">
+          <img src="/assets/images/rcat_logo.jpeg" alt="R-CAT logo" class="max-h-32 w-auto object-contain" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PUBLICATION PARTNER ================= -->
+
+
+  <section class="py-24 bg-gray-50 fade-section">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+      <h2 class="text-3xl font-bold text-primary mb-16">
+        Publication Partners
+      </h2>
+
+      <!-- Center wrapper -->
+      <div class="flex justify-center">
+
+        <!-- Card -->
+        <div class="card flex items-center justify-center h-40 w-full max-w-md">
+          <img src="assets/images/scopus.png" alt="Scopus" class="max-h-32 w-auto object-contain" />
+        </div>
+
       </div>
 
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ================= PUBLICATION DETAILS ================= -->
+  <section class="py-24 bg-white fade-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="card text-center">
+        <h3 class="text-2xl font-bold text-primary mb-6">
+          Conference Publication
+        </h3>
+        <p class="text-gray-700 mb-10 leading-relaxed">
+          All accepted papers will be recommended for publication in
+          <span class="font-semibold">SCOPUS Indexed Conference Proceedings.</span>
+        </p>
 
-<!-- ================= PUBLICATION DETAILS ================= -->
-<section class="py-24 bg-white fade-section">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="card text-center">
-      <h3 class="text-2xl font-bold text-primary mb-6">
-        Conference Publication
-      </h3>
-      <p class="text-gray-700 mb-10 leading-relaxed">
-        All accepted papers will be recommended for publication in
-        <span class="font-semibold">SCOPUS Indexed Conference Proceedings.</span>
-      </p>
+        <div class="border-t border-gray-200 my-8 "></div>
 
-      <div class="border-t border-gray-200 my-8 "></div>
-
-      <h3 class="text-2xl font-bold text-primary mb-6">
-        Journal Publication
-      </h3>
-      <p class="text-gray-700 leading-relaxed ">
-        Authors may submit extended versions to associated journals.
-        <br><br>
-        <span class="font-semibold">
-          (Article Processing Charges apply as per journal norms.)
-        </span>
-      </p>
+        <h3 class="text-2xl font-bold text-primary mb-6">
+          Journal Publication
+        </h3>
+        <p class="text-gray-700 leading-relaxed ">
+          Authors may submit extended versions to associated journals.
+          <br><br>
+          <span class="font-semibold">
+            (Article Processing Charges apply as per journal norms.)
+          </span>
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= FOOTER ================= -->
-<div id="footer-placeholder"></div>
+  <!-- ================= FOOTER ================= -->
+  <div id="footer-placeholder"></div>
 
-<!-- ================= SCRIPTS ================= -->
+  <!-- ================= SCRIPTS ================= -->
 
 
- <script>
-      fetch("components/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          const placeholder = document.getElementById("footer-placeholder");
-          placeholder.innerHTML = data;
+  <script>
+    fetch("components/footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        const placeholder = document.getElementById("footer-placeholder");
+        placeholder.innerHTML = data;
 
-          // Small delay so CSS applies first
-          setTimeout(() => {
-            const footer = placeholder.querySelector(".footer");
-            footer.classList.add("show-footer");
-          }, 100);
+        // Small delay so CSS applies first
+        setTimeout(() => {
+          const footer = placeholder.querySelector(".footer");
+          footer.classList.add("show-footer");
+        }, 100);
+      });
+  </script>
+
+  <script>
+    /* Load Header */
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+
+    /* Slider + Scroll Animations */
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // Slider
+      const slides = document.querySelectorAll(".slide");
+      let current = 0;
+
+      if (slides.length > 0) {
+        setInterval(() => {
+          slides[current].classList.remove("opacity-100");
+          slides[current].classList.add("opacity-0");
+
+          current = (current + 1) % slides.length;
+
+          slides[current].classList.remove("opacity-0");
+          slides[current].classList.add("opacity-100");
+        }, 4000);
+      }
+
+      // Scroll animation
+      const sections = document.querySelectorAll(".fade-section");
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("show");
         });
-    </script>
+      }, { threshold: 0.15 });
 
-<script>
-/* Load Header */
-fetch("components/header.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
-  });
+      sections.forEach(section => observer.observe(section));
 
-/* Slider + Scroll Animations */
-document.addEventListener("DOMContentLoaded", function () {
-
-  // Slider
-  const slides = document.querySelectorAll(".slide");
-  let current = 0;
-
-  if (slides.length > 0) {
-    setInterval(() => {
-      slides[current].classList.remove("opacity-100");
-      slides[current].classList.add("opacity-0");
-
-      current = (current + 1) % slides.length;
-
-      slides[current].classList.remove("opacity-0");
-      slides[current].classList.add("opacity-100");
-    }, 4000);
-  }
-
-  // Scroll animation
-  const sections = document.querySelectorAll(".fade-section");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("show");
     });
-  }, { threshold: 0.15 });
-
-  sections.forEach(section => observer.observe(section));
-
-});
-</script>
-<script src="/assets/js/main.js"></script>
+  </script>
+  <script src="/assets/js/main.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,199 +13,221 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <style>
+      /* ── Page Fade ── */
+      body {
+        animation: fadePage 0.8s ease-in-out;
+      }
+      @keyframes fadePage {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
-/* ── Page Fade ── */
-body {
-  animation: fadePage 0.8s ease-in-out;
-}
-@keyframes fadePage {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
+      /* ── Scroll Animation ── */
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-/* ── Scroll Animation ── */
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ══════════════════════════════════════
+      /* ══════════════════════════════════════
    CARD LAYOUT  (inspired by CodePen)
 ══════════════════════════════════════ */
 
-.l-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
+      .l-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
 
-/* Each track card */
-.c-card {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  min-height: 280px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-  background: #ffffff;
+      /* Each track card */
+      .c-card {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        min-height: 280px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        background: #ffffff;
 
-  /* entry state – slides from bottom */
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.35s ease;
-}
+        /* entry state – slides from bottom */
+        opacity: 0;
+        transform: translateY(60px);
+        transition: opacity 0.7s ease, transform 0.7s ease,
+          box-shadow 0.35s ease;
+      }
 
-/* Alternate: even cards flip figure left */
-.c-card:nth-child(even) {
-  grid-template-columns: 340px 1fr;
-}
-.c-card:nth-child(even) .c-card__description { order: 2; }
-.c-card:nth-child(even) .c-card__figure      { order: 1; }
+      /* Alternate: even cards flip figure left */
+      .c-card:nth-child(even) {
+        grid-template-columns: 340px 1fr;
+      }
+      .c-card:nth-child(even) .c-card__description {
+        order: 2;
+      }
+      .c-card:nth-child(even) .c-card__figure {
+        order: 1;
+      }
 
-/* Visible state (added by JS) */
-.c-card.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+      /* Visible state (added by JS) */
+      .c-card.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-/* Staggered delay per card */
-.c-card[data-index="0"] { transition-delay: 0s;    }
-.c-card[data-index="1"] { transition-delay: 0.12s; }
-.c-card[data-index="2"] { transition-delay: 0.24s; }
-.c-card[data-index="3"] { transition-delay: 0.36s; }
-.c-card[data-index="4"] { transition-delay: 0.48s; }
+      /* Staggered delay per card */
+      .c-card[data-index="0"] {
+        transition-delay: 0s;
+      }
+      .c-card[data-index="1"] {
+        transition-delay: 0.12s;
+      }
+      .c-card[data-index="2"] {
+        transition-delay: 0.24s;
+      }
+      .c-card[data-index="3"] {
+        transition-delay: 0.36s;
+      }
+      .c-card[data-index="4"] {
+        transition-delay: 0.48s;
+      }
 
-.c-card:hover {
-  box-shadow: 0 20px 56px rgba(30, 58, 138, 0.14);
-  transform: translateY(-6px) !important; /* override entry state */
-}
+      .c-card:hover {
+        box-shadow: 0 20px 56px rgba(30, 58, 138, 0.14);
+        transform: translateY(-6px) !important; /* override entry state */
+      }
 
-/* ── Description side ── */
-.c-card__description {
-  padding: 40px 44px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 14px;
-}
+      /* ── Description side ── */
+      .c-card__description {
+        padding: 40px 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 14px;
+      }
 
-.c-card__tagline {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #94a3b8;
-}
+      .c-card__tagline {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #94a3b8;
+      }
 
-.c-card__title {
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: #1e3a8a;
-  line-height: 1.3;
-  margin: 0;
-}
+      .c-card__title {
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: #1e3a8a;
+        line-height: 1.3;
+        margin: 0;
+      }
 
-/* Topic pills grid */
-.c-card__topics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 6px;
-}
+      /* Topic pills grid */
+      .c-card__topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 6px;
+      }
 
-.topic-pill {
-  background: #f1f5f9;
-  color: #334155;
-  font-size: 12px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  transition: background 0.2s, transform 0.2s;
-}
-.topic-pill::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #60a5fa;
-  flex-shrink: 0;
-}
-.topic-pill:hover {
-  background: #dbeafe;
-  transform: translateY(-2px);
-}
+      .topic-pill {
+        background: #f1f5f9;
+        color: #334155;
+        font-size: 12px;
+        padding: 5px 12px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .topic-pill::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #60a5fa;
+        flex-shrink: 0;
+      }
+      .topic-pill:hover {
+        background: #dbeafe;
+        transform: translateY(-2px);
+      }
 
-/* ── Figure side ── */
-.c-card__figure {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin: 0;
-  /* background set inline per card */
-}
+      /* ── Figure side ── */
+      .c-card__figure {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin: 0;
+        /* background set inline per card */
+      }
 
-/* Decorative track number */
-.c-card__number {
-  font-size: clamp(80px, 10vw, 140px);
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.15);
-  line-height: 1;
-  user-select: none;
-  letter-spacing: -4px;
-  transition: transform 0.4s ease, color 0.4s ease;
-}
-.c-card:hover .c-card__number {
-  color: rgba(255, 255, 255, 0.28);
-  transform: scale(1.08);
-}
+      /* Decorative track number */
+      .c-card__number {
+        font-size: clamp(80px, 10vw, 140px);
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.15);
+        line-height: 1;
+        user-select: none;
+        letter-spacing: -4px;
+        transition: transform 0.4s ease, color 0.4s ease;
+      }
+      .c-card:hover .c-card__number {
+        color: rgba(255, 255, 255, 0.28);
+        transform: scale(1.08);
+      }
 
-/* Decorative circle behind number */
-.c-card__figure::before {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.07);
-  top: -40px;
-  right: -40px;
-}
-.c-card__figure::after {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  bottom: -20px;
-  left: -20px;
-}
+      /* Decorative circle behind number */
+      .c-card__figure::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.07);
+        top: -40px;
+        right: -40px;
+      }
+      .c-card__figure::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        bottom: -20px;
+        left: -20px;
+      }
 
-/* ── Responsive ── */
-@media (max-width: 768px) {
-  .c-card,
-  .c-card:nth-child(even) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 160px auto;
-  }
-  .c-card:nth-child(even) .c-card__description { order: 2; }
-  .c-card:nth-child(even) .c-card__figure      { order: 1; }
-  .c-card__description {
-    padding: 28px 24px;
-  }
-  .c-card__title {
-    font-size: 1.15rem;
-  }
-}
+      /* ── Responsive ── */
+      @media (max-width: 768px) {
+        .c-card,
+        .c-card:nth-child(even) {
+          grid-template-columns: 1fr;
+          grid-template-rows: 160px auto;
+        }
+        .c-card:nth-child(even) .c-card__description {
+          order: 2;
+        }
+        .c-card:nth-child(even) .c-card__figure {
+          order: 1;
+        }
+        .c-card__description {
+          padding: 28px 24px;
+        }
+        .c-card__title {
+          font-size: 1.15rem;
+        }
+      }
     </style>
   </head>
 
@@ -222,7 +244,17 @@ body {
               class="slide absolute inset-0 opacity-100 transition-opacity duration-1000"
             >
               <img
-                src="assets/images/building.avif" alt="Poornima University campus building"
+                src="/assets/images/PoornimaConference.JPG"
+                alt="Poornima University Conference venue"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/building.avif"
+                alt="Poornima University campus building"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -231,7 +263,8 @@ body {
               class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
             >
               <img
-                src="assets/images/poornima 3.webp" alt="Poornima University campus"
+                src="/assets/images/poornima 3.webp"
+                alt="Poornima University campus"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -240,7 +273,8 @@ body {
               class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
             >
               <img
-                src="assets/images/footercover.webp" alt="ICSCIS conference venue"
+                src="/assets/images/footercover.webp"
+                alt="ICSCIS conference venue"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -271,33 +305,32 @@ body {
         </h2>
 
         <div
-  class="bg-gray-50 p-12 rounded-2xl shadow-sm border border-gray-200"
->
-  <p class="text-gray-700 leading-relaxed text-justify mb-6">
-    The theme of the conference will be
-    <span class="font-bold italic">
-      “Intelligent Systems and Emerging Technologies”.</span>
-    Besides contributions addressing the conference theme, ICISET also
-    welcomes authors to submit their original research results in
-    traditional and emerging research areas across a wide range of
-    application and technological domains within the context of
-    intelligent computing and next-generation digital technologies.
-  </p>
+          class="bg-gray-50 p-12 rounded-2xl shadow-sm border border-gray-200"
+        >
+          <p class="text-gray-700 leading-relaxed text-justify mb-6">
+            The theme of the conference will be
+            <span class="font-bold italic">
+              “Intelligent Systems and Emerging Technologies”.</span
+            >
+            Besides contributions addressing the conference theme, ICISET also
+            welcomes authors to submit their original research results in
+            traditional and emerging research areas across a wide range of
+            application and technological domains within the context of
+            intelligent computing and next-generation digital technologies.
+          </p>
 
-  <p class="text-gray-700 leading-relaxed text-justify">
-    The research areas include, but are not limited to the following
-    tracks mentioned below.
-  </p>
-</div>
+          <p class="text-gray-700 leading-relaxed text-justify">
+            The research areas include, but are not limited to the following
+            tracks mentioned below.
+          </p>
+        </div>
       </div>
-      <div>
-        
-      </div>
+      <div></div>
     </section>
 
-     <section class="py 10 bg-white text-center fade-section">
+    <section class="py 10 bg-white text-center fade-section">
       <div class="max-w-4xl mx-auto px-6">
-         <a
+        <a
           href="https://docs.google.com/document/d/10krTxY0FsV8M9M50ul9dGDxIy-7WNq6yxRg6eQQOEFo/edit?usp=sharing"
           class="inline-block bg-primary text-white px-10 py-4 rounded-xl font-semibold hover:scale-105 transition duration-300 shadow-md"
         >
@@ -309,33 +342,57 @@ body {
     <!-- ================= TRACKS ================= -->
     <section class="py-24 bg-gray-100 fade-section">
       <div class="max-w-7xl mx-auto px-6">
-
         <h2 class="text-3xl font-bold text-center text-primary mb-6">
           Conference Tracks
         </h2>
-       <p class="text-center text-gray-500 mb-12 text-base max-w-xl mx-auto leading-relaxed">
-          ICISET-2026 features five focused research tracks covering the frontiers of intelligent computing and emerging digital technologies.
+        <p
+          class="text-center text-gray-500 mb-12 text-base max-w-xl mx-auto leading-relaxed"
+        >
+          ICISET-2026 features five focused research tracks covering the
+          frontiers of intelligent computing and emerging digital technologies.
         </p>
 
         <div class="l-cards">
-
           <!-- TRACK 1 -->
           <div class="c-card" data-index="0">
             <div class="c-card__description">
               <div class="c-card__tagline">Track 01</div>
-              <h2 class="c-card__title">Intelligent Systems &amp; Machine Learning</h2>
+              <h2 class="c-card__title">
+                Intelligent Systems &amp; Machine Learning
+              </h2>
               <div class="c-card__topics">
-                <span class="topic-pill">Advanced Deep Learning and Foundation Models</span>
-                <span class="topic-pill">Reinforcement Learning and Autonomous Decision Systems</span>
-                <span class="topic-pill">Explainable, Ethical, and Responsible AI</span>
-                <span class="topic-pill">Computer Vision and Pattern Recognition Systems</span>
-                <span class="topic-pill">Natural Language Processing and Conversational AI</span>
-                <span class="topic-pill">Edge AI and Distributed Intelligent Systems</span>
-                <span class="topic-pill">Hybrid AI: Neuro-Symbolic and Cognitive Architectures</span>
-                <span class="topic-pill">AI for Robotics and Intelligent Automation</span>
+                <span class="topic-pill"
+                  >Advanced Deep Learning and Foundation Models</span
+                >
+                <span class="topic-pill"
+                  >Reinforcement Learning and Autonomous Decision Systems</span
+                >
+                <span class="topic-pill"
+                  >Explainable, Ethical, and Responsible AI</span
+                >
+                <span class="topic-pill"
+                  >Computer Vision and Pattern Recognition Systems</span
+                >
+                <span class="topic-pill"
+                  >Natural Language Processing and Conversational AI</span
+                >
+                <span class="topic-pill"
+                  >Edge AI and Distributed Intelligent Systems</span
+                >
+                <span class="topic-pill"
+                  >Hybrid AI: Neuro-Symbolic and Cognitive Architectures</span
+                >
+                <span class="topic-pill"
+                  >AI for Robotics and Intelligent Automation</span
+                >
               </div>
             </div>
-            <figure class="c-card__figure" style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%)">
+            <figure
+              class="c-card__figure"
+              style="
+                background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+              "
+            >
               <span class="c-card__number">01</span>
             </figure>
           </div>
@@ -344,19 +401,43 @@ body {
           <div class="c-card" data-index="1">
             <div class="c-card__description">
               <div class="c-card__tagline">Track 02</div>
-              <h2 class="c-card__title">Cybersecurity &amp; Secure Computing</h2>
+              <h2 class="c-card__title">
+                Cybersecurity &amp; Secure Computing
+              </h2>
               <div class="c-card__topics">
-                <span class="topic-pill">Zero Trust Architecture and Secure System Design</span>
-                <span class="topic-pill">Cryptography, Post-Quantum Security, and Privacy Techniques</span>
-                <span class="topic-pill">Blockchain and Decentralized Security Frameworks</span>
-                <span class="topic-pill">AI and Machine Learning for Cyber Threat Detection</span>
-                <span class="topic-pill">Cloud, Edge, and IoT Security Challenges</span>
-                <span class="topic-pill">Digital Forensics and Cybercrime Investigation</span>
-                <span class="topic-pill">Secure Software Engineering and DevSecOps</span>
-                <span class="topic-pill">Privacy-Preserving Computing and Data Protection</span>
+                <span class="topic-pill"
+                  >Zero Trust Architecture and Secure System Design</span
+                >
+                <span class="topic-pill"
+                  >Cryptography, Post-Quantum Security, and Privacy
+                  Techniques</span
+                >
+                <span class="topic-pill"
+                  >Blockchain and Decentralized Security Frameworks</span
+                >
+                <span class="topic-pill"
+                  >AI and Machine Learning for Cyber Threat Detection</span
+                >
+                <span class="topic-pill"
+                  >Cloud, Edge, and IoT Security Challenges</span
+                >
+                <span class="topic-pill"
+                  >Digital Forensics and Cybercrime Investigation</span
+                >
+                <span class="topic-pill"
+                  >Secure Software Engineering and DevSecOps</span
+                >
+                <span class="topic-pill"
+                  >Privacy-Preserving Computing and Data Protection</span
+                >
               </div>
             </div>
-            <figure class="c-card__figure" style="background:linear-gradient(135deg,#0e7490 0%,#06b6d4 100%)">
+            <figure
+              class="c-card__figure"
+              style="
+                background: linear-gradient(135deg, #0e7490 0%, #06b6d4 100%);
+              "
+            >
               <span class="c-card__number">02</span>
             </figure>
           </div>
@@ -365,19 +446,43 @@ body {
           <div class="c-card" data-index="2">
             <div class="c-card__description">
               <div class="c-card__tagline">Track 03</div>
-              <h2 class="c-card__title">Intelligent Healthcare Systems &amp; Biomedical Applications</h2>
+              <h2 class="c-card__title">
+                Intelligent Healthcare Systems &amp; Biomedical Applications
+              </h2>
               <div class="c-card__topics">
-                <span class="topic-pill">AI in Medical Imaging and Diagnostics</span>
-                <span class="topic-pill">Precision Medicine and Personalized Healthcare Systems</span>
-                <span class="topic-pill">Wearable Devices and Remote Patient Monitoring</span>
-                <span class="topic-pill">Biomedical Signal and Image Processing</span>
-                <span class="topic-pill">Clinical Decision Support Systems and Health Informatics</span>
-                <span class="topic-pill">Robotics and Automation in Healthcare</span>
-                <span class="topic-pill">AI for Drug Discovery and Genomics</span>
-                <span class="topic-pill">Smart Healthcare Systems and Hospital Automation</span>
+                <span class="topic-pill"
+                  >AI in Medical Imaging and Diagnostics</span
+                >
+                <span class="topic-pill"
+                  >Precision Medicine and Personalized Healthcare Systems</span
+                >
+                <span class="topic-pill"
+                  >Wearable Devices and Remote Patient Monitoring</span
+                >
+                <span class="topic-pill"
+                  >Biomedical Signal and Image Processing</span
+                >
+                <span class="topic-pill"
+                  >Clinical Decision Support Systems and Health
+                  Informatics</span
+                >
+                <span class="topic-pill"
+                  >Robotics and Automation in Healthcare</span
+                >
+                <span class="topic-pill"
+                  >AI for Drug Discovery and Genomics</span
+                >
+                <span class="topic-pill"
+                  >Smart Healthcare Systems and Hospital Automation</span
+                >
               </div>
             </div>
-            <figure class="c-card__figure" style="background:linear-gradient(135deg,#7c3aed 0%,#a855f7 100%)">
+            <figure
+              class="c-card__figure"
+              style="
+                background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+              "
+            >
               <span class="c-card__number">03</span>
             </figure>
           </div>
@@ -386,19 +491,45 @@ body {
           <div class="c-card" data-index="3">
             <div class="c-card__description">
               <div class="c-card__tagline">Track 04</div>
-              <h2 class="c-card__title">Indian Knowledge Systems &amp; Indigenous Technologies</h2>
+              <h2 class="c-card__title">
+                Indian Knowledge Systems &amp; Indigenous Technologies
+              </h2>
               <div class="c-card__topics">
-                <span class="topic-pill">Digital Preservation and Analysis of Indian Knowledge Systems</span>
-                <span class="topic-pill">AI Applications in Sanskrit and Ancient Text Processing</span>
-                <span class="topic-pill">Indigenous Technologies for Sustainable Development</span>
-                <span class="topic-pill">Traditional Medicine Systems (Ayurveda, Yoga) and Modern Integration</span>
-                <span class="topic-pill">Indian Architecture, Vastu, and Sustainable Design</span>
-                <span class="topic-pill">Ethnoscience, Agriculture, and Rural Innovation Systems</span>
-                <span class="topic-pill">Philosophical Foundations and Computational Perspectives of IKS</span>
-                <span class="topic-pill">Cultural Heritage Technologies and Digital Humanities</span>
+                <span class="topic-pill"
+                  >Digital Preservation and Analysis of Indian Knowledge
+                  Systems</span
+                >
+                <span class="topic-pill"
+                  >AI Applications in Sanskrit and Ancient Text Processing</span
+                >
+                <span class="topic-pill"
+                  >Indigenous Technologies for Sustainable Development</span
+                >
+                <span class="topic-pill"
+                  >Traditional Medicine Systems (Ayurveda, Yoga) and Modern
+                  Integration</span
+                >
+                <span class="topic-pill"
+                  >Indian Architecture, Vastu, and Sustainable Design</span
+                >
+                <span class="topic-pill"
+                  >Ethnoscience, Agriculture, and Rural Innovation Systems</span
+                >
+                <span class="topic-pill"
+                  >Philosophical Foundations and Computational Perspectives of
+                  IKS</span
+                >
+                <span class="topic-pill"
+                  >Cultural Heritage Technologies and Digital Humanities</span
+                >
               </div>
             </div>
-            <figure class="c-card__figure" style="background:linear-gradient(135deg,#b45309 0%,#f59e0b 100%)">
+            <figure
+              class="c-card__figure"
+              style="
+                background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+              "
+            >
               <span class="c-card__number">04</span>
             </figure>
           </div>
@@ -407,23 +538,45 @@ body {
           <div class="c-card" data-index="4">
             <div class="c-card__description">
               <div class="c-card__tagline">Track 05</div>
-              <h2 class="c-card__title">Smart &amp; Emerging Technologies for Sustainable Development</h2>
+              <h2 class="c-card__title">
+                Smart &amp; Emerging Technologies for Sustainable Development
+              </h2>
               <div class="c-card__topics">
-                <span class="topic-pill">Smart Cities and Intelligent Urban Infrastructure</span>
-                <span class="topic-pill">Internet of Things (IoT) for Sustainable Applications</span>
-                <span class="topic-pill">Green Computing and Energy-Efficient Systems</span>
-                <span class="topic-pill">Renewable Energy Technologies and Smart Grids</span>
-                <span class="topic-pill">AI and Data Analytics for Climate Change Mitigation</span>
-                <span class="topic-pill">Sustainable Transportation and Mobility Systems</span>
-                <span class="topic-pill">Industry 4.0 and Smart Manufacturing</span>
-                <span class="topic-pill">Circular Economy and Technology-Driven Sustainability</span>
+                <span class="topic-pill"
+                  >Smart Cities and Intelligent Urban Infrastructure</span
+                >
+                <span class="topic-pill"
+                  >Internet of Things (IoT) for Sustainable Applications</span
+                >
+                <span class="topic-pill"
+                  >Green Computing and Energy-Efficient Systems</span
+                >
+                <span class="topic-pill"
+                  >Renewable Energy Technologies and Smart Grids</span
+                >
+                <span class="topic-pill"
+                  >AI and Data Analytics for Climate Change Mitigation</span
+                >
+                <span class="topic-pill"
+                  >Sustainable Transportation and Mobility Systems</span
+                >
+                <span class="topic-pill"
+                  >Industry 4.0 and Smart Manufacturing</span
+                >
+                <span class="topic-pill"
+                  >Circular Economy and Technology-Driven Sustainability</span
+                >
               </div>
             </div>
-            <figure class="c-card__figure" style="background:linear-gradient(135deg,#0f766e 0%,#14b8a6 100%)">
+            <figure
+              class="c-card__figure"
+              style="
+                background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+              "
+            >
               <span class="c-card__number">05</span>
             </figure>
           </div>
-
         </div>
       </div>
     </section>
@@ -451,7 +604,7 @@ body {
 
     <!-- ================= FOOTER ================= -->
     <div id="footer-placeholder"></div>
-    
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         /* Slider */

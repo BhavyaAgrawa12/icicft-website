@@ -212,18 +212,23 @@
       @media (max-width: 768px) {
         .c-card,
         .c-card:nth-child(even) {
-          grid-template-columns: 1fr;
-          grid-template-rows: 160px auto;
+          display: flex;
+          flex-direction: column;
+          grid-template-columns: none;
+          grid-template-rows: none;
+          min-height: auto;
         }
-        .c-card:nth-child(even) .c-card__description {
-          order: 2;
-        }
-        .c-card:nth-child(even) .c-card__figure {
+
+        .c-card__figure {
           order: 1;
+          min-height: 160px;
         }
+
         .c-card__description {
+          order: 2;
           padding: 28px 24px;
         }
+
         .c-card__title {
           font-size: 1.15rem;
         }

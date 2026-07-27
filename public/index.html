@@ -48,7 +48,23 @@
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
       }
 
+      .slider {
+        position: relative;
+      }
+
+      .slider .slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
       .slider img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
         transition: transform 6s ease;
       }
 
@@ -231,6 +247,26 @@
               <img
                 src="/assets/images/footercover.webp"
                 alt="ICSCIS conference venue"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/conference.webp"
+                alt="Conference event image"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+            >
+              <img
+                src="/assets/images/venue.webp"
+                alt="Conference venue image"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -536,7 +572,7 @@
         <p
           class="text-justify text-gray-600 max-w-4xl mx-auto mb-16 text-lg leading-relaxed"
         >
-          ICISET-2026 features five major research tracks covering key areas of
+          ICISET-2026 features six major research tracks covering key areas of
           intelligent computing, data science, cybersecurity, emerging
           technologies, and real-world applications of AI across healthcare and
           society.
@@ -559,7 +595,7 @@
                 <span class="track-number">01</span>
                 <div class="card-content">
                   <h4 class="text-2xl font-bold mb-3" style="color: #fff">
-                    Intelligent Systems and Machine Learning
+                   Artificial Intelligence in Healthcare
                   </h4>
                   <p
                     style="
@@ -568,9 +604,7 @@
                       line-height: 1.7;
                     "
                   >
-                    Focuses on advanced machine learning paradigms, autonomous
-                    intelligence, and interpretable AI systems for real-world
-                    applications.
+                   Highlights the application of artificial intelligence to improve healthcare delivery, clinical decision-making, medical diagnostics, and patient-centric intelligent healthcare systems.
                   </p>
                   <p
                     style="
@@ -579,14 +613,7 @@
                       margin-top: 10px;
                     "
                   >
-                    <strong style="color: #fff">Key Areas:</strong> Advanced
-                    Deep Learning and Foundation Models, Reinforcement Learning
-                    and Autonomous Decision Systems, Explainable Ethical and
-                    Responsible AI, Computer Vision and Pattern Recognition
-                    Systems, Natural Language Processing and Conversational AI,
-                    Edge AI and Distributed Intelligent Systems, Hybrid AI:
-                    Neuro-Symbolic and Cognitive Architectures, AI for Robotics
-                    and Intelligent Automation.
+                    <strong style="color: #fff">Key Areas:</strong>Medical Imaging and Diagnostics, Clinical Decision Support Systems, Precision Medicine, Drug Discovery and Discovery Informatics, Healthcare Data Analytics, Digital Health and Telemedicine, Wearable Health Technologies, Biomedical Signal Processing.
                   </p>
                 </div>
                 <div class="track-progress-bar">
@@ -599,7 +626,7 @@
                 <span class="track-number">02</span>
                 <div class="card-content">
                   <h4 class="text-2xl font-bold mb-3" style="color: #fff">
-                    Cybersecurity and Secure Computing
+                   Artificial Intelligence in Industry and Intelligent Manufacturing
                   </h4>
                   <p
                     style="
@@ -608,9 +635,7 @@
                       line-height: 1.7;
                     "
                   >
-                    Covers resilient security architectures, privacy-preserving
-                    methods, and intelligent defenses for modern digital
-                    ecosystems.
+                    Highlights intelligent manufacturing technologies, human-centric automation, smart industrial systems, and AI-driven innovations for next-generation Industry
                   </p>
                   <p
                     style="
@@ -619,14 +644,7 @@
                       margin-top: 10px;
                     "
                   >
-                    <strong style="color: #fff">Key Areas:</strong> Zero Trust
-                    Architecture and Secure System Design, Cryptography
-                    Post-Quantum Security and Privacy Techniques, Blockchain and
-                    Decentralized Security Frameworks, AI and Machine Learning
-                    for Cyber Threat Detection, Cloud Edge and IoT Security
-                    Challenges, Digital Forensics and Cybercrime Investigation,
-                    Secure Software Engineering and DevSecOps,
-                    Privacy-Preserving Computing and Data Protection.
+                    <strong style="color: #fff">Key Areas:</strong> Smart Manufacturing Systems, Industrial Robotics and Automation, Predictive Maintenance, Digital Twin Technologies, Intelligent Quality Inspection, Human–AI Collaboration, Smart Supply Chain Management, Industrial Internet of Things (IIoT).
                   </p>
                 </div>
                 <div class="track-progress-bar">
@@ -639,8 +657,7 @@
                 <span class="track-number">03</span>
                 <div class="card-content">
                   <h4 class="text-2xl font-bold mb-3" style="color: #fff">
-                    Intelligent Healthcare Systems and Biomedical Applications
-                  </h4>
+                   Artificial Intelligence for Smart Cities and Sustainable Development
                   <p
                     style="
                       color: rgba(255, 255, 255, 0.88);
@@ -648,9 +665,7 @@
                       line-height: 1.7;
                     "
                   >
-                    Explores AI-driven healthcare innovations, biomedical
-                    analytics, and intelligent systems that enhance diagnosis,
-                    treatment, and patient care.
+                   Highlights AI-enabled intelligent urban infrastructure, sustainable resource management, environmental intelligence, and smart solutions for future cities and communities.
                   </p>
                   <p
                     style="
@@ -659,14 +674,7 @@
                       margin-top: 10px;
                     "
                   >
-                    <strong style="color: #fff">Key Areas:</strong> AI in
-                    Medical Imaging and Diagnostics, Precision Medicine and
-                    Personalized Healthcare Systems, Wearable Devices and Remote
-                    Patient Monitoring, Biomedical Signal and Image Processing,
-                    Clinical Decision Support Systems and Health Informatics,
-                    Robotics and Automation in Healthcare, AI for Drug Discovery
-                    and Genomics, Smart Healthcare Systems and Hospital
-                    Automation.
+                    <strong style="color: #fff">Key Areas:</strong> Smart Transportation Systems, Smart Energy Management, Precision Agriculture, Environmental Monitoring, Smart Water Management, Intelligent Waste Management, Disaster Prediction and Response, Urban Analytics and Smart Governance.
                   </p>
                 </div>
                 <div class="track-progress-bar">
@@ -675,12 +683,11 @@
               </div>
 
               <!-- Card 4 -->
-              <div class="track-card track-card-3">
-                <span class="track-number">04</span>
+                <div class="track-card track-card-2">
+                <span class="track-number">03</span>
                 <div class="card-content">
                   <h4 class="text-2xl font-bold mb-3" style="color: #fff">
-                    Indian Knowledge Systems and Indigenous Technologies
-                  </h4>
+                   Artificial Intelligence for Smart Cities and Sustainable Development
                   <p
                     style="
                       color: rgba(255, 255, 255, 0.88);
@@ -688,9 +695,7 @@
                       line-height: 1.7;
                     "
                   >
-                    Highlights the digital preservation, computational analysis,
-                    and modern relevance of Indian knowledge traditions and
-                    indigenous innovations.
+                   Highlights AI-enabled intelligent urban infrastructure, sustainable resource management, environmental intelligence, and smart solutions for future cities and communities.
                   </p>
                   <p
                     style="
@@ -699,28 +704,21 @@
                       margin-top: 10px;
                     "
                   >
-                    <strong style="color: #fff">Key Areas:</strong> Digital
-                    Preservation and Analysis of Indian Knowledge Systems, AI
-                    Applications in Sanskrit and Ancient Text Processing,
-                    Indigenous Technologies for Sustainable Development,
-                    Traditional Medicine Systems and Modern Integration, Indian
-                    Architecture Vastu and Sustainable Design, Ethnoscience
-                    Agriculture and Rural Innovation Systems, Philosophical
-                    Foundations and Computational Perspectives of IKS, Cultural
-                    Heritage Technologies and Digital Humanities.
+                    <strong style="color: #fff">Key Areas:</strong> Smart Transportation Systems, Smart Energy Management, Precision Agriculture, Environmental Monitoring, Smart Water Management, Intelligent Waste Management, Disaster Prediction and Response, Urban Analytics and Smart Governance.
                   </p>
                 </div>
                 <div class="track-progress-bar">
-                  <div class="track-progress-fill" id="progress-3"></div>
+                  <div class="track-progress-fill" id="progress-2"></div>
                 </div>
               </div>
+            
 
               <!-- Card 5 -->
               <div class="track-card track-card-4">
                 <span class="track-number">05</span>
                 <div class="card-content">
                   <h4 class="text-2xl font-bold mb-3" style="color: #fff">
-                    Smart and Emerging Technologies for Sustainable Development
+                  Artificial Intelligence in Cybersecurity and Intelligent Computing
                   </h4>
                   <p
                     style="
@@ -729,9 +727,7 @@
                       line-height: 1.7;
                     "
                   >
-                    Focuses on smart infrastructure, green innovation, and
-                    emerging technologies that support sustainable growth and
-                    resilient communities.
+                  Highlights AI-powered cybersecurity solutions, intelligent computing paradigms, secure digital ecosystems, and advanced techniques for protecting next-generation information systems.
                   </p>
                   <p
                     style="
@@ -740,21 +736,47 @@
                       margin-top: 10px;
                     "
                   >
-                    <strong style="color: #fff">Key Areas:</strong> Smart Cities
-                    and Intelligent Urban Infrastructure, Internet of Things for
-                    Sustainable Applications, Green Computing and
-                    Energy-Efficient Systems, Renewable Energy Technologies and
-                    Smart Grids, AI and Data Analytics for Climate Change
-                    Mitigation, Sustainable Transportation and Mobility Systems,
-                    Industry 4.0 and Smart Manufacturing, Circular Economy and
-                    Technology-Driven Sustainability.
+                    <strong style="color: #fff">Key Areas:</strong>Intelligent Threat Detection, Intrusion Detection Systems, Malware Analysis, Digital Forensics, Network Security Intelligence, Cloud Security, Privacy-Preserving AI, Secure Machine Learning.
                   </p>
                 </div>
                 <div class="track-progress-bar">
                   <div class="track-progress-fill" id="progress-4"></div>
                 </div>
               </div>
+              
+              <!-- /Card 6 -->
+                 <div class="track-card track-card-4">
+                <span class="track-number">06</span>
+                <div class="card-content">
+                  <h4 class="text-2xl font-bold mb-3" style="color: #fff">
+                  Artificial Intelligence for Indian Knowledge Systems (AI4IKS)
+                  </h4>
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.88);
+                      font-size: 0.95rem;
+                      line-height: 1.7;
+                    "
+                  >
+                 Highlights the integration of Artificial Intelligence with Indian Knowledge Systems for digital preservation, computational analysis, indigenous innovation, and sustainable societal development.
+                  </p>
+                  <p
+                    style="
+                      color: rgba(255, 255, 255, 0.75);
+                      font-size: 0.9rem;
+                      margin-top: 10px;
+                    "
+                  >
+                    <strong style="color: #fff">Key Areas:</strong>AI for Ayurveda, Sanskrit Language Processing, Indic Language Technologies, Ancient Manuscript Digitization, Vedic Mathematics, Yoga and Wellness Analytics, Cultural Heritage Preservation, Knowledge Graphs for IKS.
+                </div>
+                <div class="track-progress-bar">
+                  <div class="track-progress-fill" id="progress-4"></div>
+                </div>
+              </div>
+
             </div>
+
+
           </div>
 
           <button
@@ -1012,7 +1034,7 @@
         const dotsContainer = document.getElementById("track-dots");
         const prevBtn = document.getElementById("track-prev");
         const nextBtn = document.getElementById("track-next");
-        const totalCards = 5;
+        const totalCards = track ? track.children.length : 0;
         const autoPlayInterval = 4000;
         let current = 0;
         let autoTimer = null;

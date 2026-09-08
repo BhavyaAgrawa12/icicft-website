@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/</loc>
+  </url>
+  <url>
+    <loc>/association</loc>
+  </url>
+  <url>
+    <loc>/call-for-papers</loc>
+  </url>
+  <url>
+    <loc>/call-for-special-session</loc>
+  </url>
+  <url>
+    <loc>/committee</loc>
+  </url>
+  <url>
+    <loc>/contact</loc>
+  </url>
+  <url>
+    <loc>/partners</loc>
+  </url>
+  <url>
+    <loc>/speakers</loc>
+  </url>
+  <url>
+    <loc>/special-sessions</loc>
+  </url>
+  <url>
+    <loc>/sponsorship</loc>
+  </url>
+  <url>
+    <loc>/submission</loc>
+  </url>
+</urlset>
